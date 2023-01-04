@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm -->
+<html lang="en-US" style="transform: none;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+	        <link rel="shortcut icon" href="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/03/sbb_logo.png?lossy=0&amp;strip=1&amp;webp=1" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/03/sbb_logo.png?lossy=0&amp;strip=1&amp;webp=1">
+	    <link rel="alternate" type="application/rss+xml" title="Single Board Bytes RSS Feed" href="https://singleboardbytes.com/feed">
+    <link rel="alternate" type="application/atom+xml" title="Single Board Bytes Atom Feed" href="https://singleboardbytes.com/feed/atom">
+    <link rel="pingback" href="https://singleboardbytes.com/xmlrpc.php">
+    <!--[if lt IE 9]>
+	<script src="https://singleboardbytes.com/wp-content/themes/soledad/js/html5.js"></script>
+	<![endif]-->
+	<title>How to install OpenCV on Raspberry Pi 4 | Single Board Bytes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="dns-prefetch" href="https://s.gravatar.com/">
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+		<style>.penci-library-modal-btn {margin-left: 5px;background: #33ad67;vertical-align: top;font-size: 0 !important;}.penci-library-modal-btn:before {content: '';width: 16px;height: 16px;background-image: url('https://786647.smushcdn.com/1501109/wp-content/themes/soledad/images/penci-icon.png?lossy=0&strip=1&webp=1');background-position: center;background-size: contain;background-repeat: no-repeat;}#penci-library-modal .penci-elementor-template-library-template-name {text-align: right;flex: 1 0 0%;}</style>
+	<meta name="dc.title" content="How to install OpenCV on Raspberry Pi 4 | Single Board Bytes">
+<meta name="dc.description" content="OpenCV is available for several platforms, including Linux and Windows. In this tutorial, however, we will be installing OpenCV on our Raspberry Pi 4.">
+<meta name="dc.relation" content="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm">
+<meta name="dc.source" content="https://singleboardbytes.com">
+<meta name="dc.language" content="en_US">
+<meta name="description" content="OpenCV is available for several platforms, including Linux and Windows. In this tutorial, however, we will be installing OpenCV on our Raspberry Pi 4.">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm">
+<meta property="og:url" content="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm">
+<meta property="og:site_name" content="Single Board Bytes">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to install OpenCV on Raspberry Pi 4 | Single Board Bytes">
+<meta property="og:description" content="OpenCV is available for several platforms, including Linux and Windows. In this tutorial, however, we will be installing OpenCV on our Raspberry Pi 4.">
+<meta property="og:image" content="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/OpenCV-Raspberry-Pi.png?lossy=0&amp;strip=1&amp;webp=1">
+<meta property="og:image:secure_url" content="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/OpenCV-Raspberry-Pi.png?lossy=0&amp;strip=1&amp;webp=1">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="600">
+<meta property="og:image:alt" content="opencv raspberry pi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to install OpenCV on Raspberry Pi 4 | Single Board Bytes">
+<meta name="twitter:description" content="OpenCV is available for several platforms, including Linux and Windows. In this tutorial, however, we will be installing OpenCV on our Raspberry Pi 4.">
+<meta name="twitter:image:src" content="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/OpenCV-Raspberry-Pi.png?lossy=0&amp;strip=1&amp;webp=1">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://786647.smushcdn.com/">
+<link rel="alternate" type="application/rss+xml" title="Single Board Bytes » Feed" href="https://singleboardbytes.com/feed">
+<link rel="alternate" type="application/rss+xml" title="Single Board Bytes » Comments Feed" href="https://singleboardbytes.com/comments/feed">
+<script type="text/javascript" async="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/analytics.js"></script><script async="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/saved_resource"></script><script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"Article","datePublished":"2021-05-10T23:54:25-04:00","dateModified":"2021-11-20T18:32:34-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/singleboardbytes.com\/647\/install-opencv-raspberry-pi-4.htm"},"headline":"How to install OpenCV on Raspberry Pi 4","author":{"@type":"Person","name":"Tony G","url":"https:\/\/singleboardbytes.com\/author\/tonyg"},"image":{"@type":"ImageObject","url":"https:\/\/singleboardbytes.com\/wp-content\/uploads\/sites\/7\/2021\/04\/OpenCV-Raspberry-Pi.png"},"publisher":{"@type":"Organization","name":"Single Board Bytes","logo":{"@type":"ImageObject","url":"https:\/\/singleboardbytes.com\/wp-content\/uploads\/sites\/7\/2020\/04\/logo_sbb1.png","width":"3664","height":"548"}},"description":"OpenCV is an open-source Python library whose main focus is computer vision, image processing, and ML (Machine Learning). The OpenCV library plays a huge role in real-time systems. It is&hellip;"}</script>
+<link rel="alternate" type="application/rss+xml" title="Single Board Bytes » How to install OpenCV on Raspberry Pi 4 Comments Feed" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm/feed">
+<link rel="stylesheet" id="wp-block-library-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:"0 0 1em 0"}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}
+</style>
+<style id="wpseopress-local-business-style-inline-css" type="text/css">
+span.wp-block-wpseopress-local-business-field{margin-right:8px}
+
+</style>
+<link rel="stylesheet" id="mpp_gutenberg-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/blocks.style.build.css" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/classic-themes.min.css" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 12px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 32px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 14px;--wp--preset--font-size--huge: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="penci-oswald-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="penci-fonts-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="penci-main-style-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="penci-font-awesomeold-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/font-awesome.4.7.0.swap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="penci_icon-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/penci-icon.css" type="text/css" media="all">
+<link rel="stylesheet" id="penci_style-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="penci_social_counter-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/social-counter.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-legacy-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/frontend-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-235-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/post-235.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-global-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/global.css" type="text/css" media="all">
+<link rel="stylesheet" id="penci-soledad-parent-style-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/css(2)" type="text/css" media="all">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://singleboardbytes.com/wp-json/"><link rel="alternate" type="application/json" href="https://singleboardbytes.com/wp-json/wp/v2/posts/647"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://singleboardbytes.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://singleboardbytes.com/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="shortlink" href="https://singleboardbytes.com/?p=647">
+<link rel="alternate" type="application/json+oembed" href="https://singleboardbytes.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm">
+<link rel="alternate" type="text/xml+oembed" href="https://singleboardbytes.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm&amp;format=xml">
+<!-- HFCM by 99 Robots - Snippet # 1: Adsense -->
+<script data-ad-client="ca-pub-4052130819365638" async="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/f.txt"></script>
+<!-- /end HFCM by 99 Robots -->
+	<style type="text/css">
+																											</style>
+	<style id="penci-custom-style" type="text/css">body{ --pcbg-cl: #fff; --pctext-cl: #313131; --pcborder-cl: #dedede; --pcheading-cl: #313131; --pcmeta-cl: #888888; --pcaccent-cl: #6eb48c; --pcbody-font: 'PT Serif', serif; --pchead-font: 'Raleway', sans-serif; --pchead-wei: bold; } .single.penci-body-single-style-5 #header, .single.penci-body-single-style-6 #header, .single.penci-body-single-style-10 #header, .single.penci-body-single-style-5 .pc-wrapbuilder-header, .single.penci-body-single-style-6 .pc-wrapbuilder-header, .single.penci-body-single-style-10 .pc-wrapbuilder-header { --pchd-mg: 40px; } .fluid-width-video-wrapper > div { position: absolute; left: 0; right: 0; top: 0; width: 100%; height: 100%; } .yt-video-place { position: relative; text-align: center; } .yt-video-place.embed-responsive .start-video { display: block; top: 0; left: 0; bottom: 0; right: 0; position: absolute; transform: none; } .yt-video-place.embed-responsive .start-video img { margin: 0; padding: 0; top: 50%; display: inline-block; position: absolute; left: 50%; transform: translate(-50%, -50%); width: 68px; height: auto; } body { --pchead-font: 'Roboto', sans-serif; } body { --pcbody-font: Arial, Helvetica, sans-serif; } p{ line-height: 1.8; } #navigation .menu > li > a, #navigation ul.menu ul.sub-menu li > a, .navigation ul.menu ul.sub-menu li > a, .penci-menu-hbg .menu li a, #sidebar-nav .menu li a { font-family: 'Roboto', sans-serif; font-weight: normal; } .penci-hide-tagupdated{ display: none !important; } body, .widget ul li a{ font-size: 16px; } .widget ul li, .post-entry, p, .post-entry p { font-size: 16px; line-height: 1.8; } body { --pchead-wei: bolder; } .penci-image-holder, .standard-post-image img, .penci-overlay-over:before, .penci-overlay-over .overlay-border, .penci-grid li .item img, .penci-masonry .item-masonry a img, .penci-grid .list-post.list-boxed-post, .penci-grid li.list-boxed-post-2 .content-boxed-2, .grid-mixed, .penci-grid li.typography-style .overlay-typography, .penci-grid li.typography-style .overlay-typography:before, .penci-grid li.typography-style .overlay-typography:after, .container-single .post-image, .home-featured-cat-content .mag-photo .mag-overlay-photo, .mag-single-slider-overlay, ul.homepage-featured-boxes li .penci-fea-in:before, ul.homepage-featured-boxes li .penci-fea-in:after, ul.homepage-featured-boxes .penci-fea-in .fea-box-img:after, ul.homepage-featured-boxes li .penci-fea-in, .penci-slider38-overlay, .pcbg-thumb, .pcbg-bgoverlay { border-radius: 2%; -webkit-border-radius: 2%; } .penci-featured-content-right:before{ border-top-right-radius: 2%; border-bottom-right-radius: 2%; } .penci-slider4-overlay, .penci-slide-overlay .overlay-link, .featured-style-29 .featured-slider-overlay, .penci-widget-slider-overlay{ border-radius: 2%; -webkit-border-radius: 2%; } .penci-flat-overlay .penci-slide-overlay .penci-mag-featured-content:before{ border-bottom-left-radius: 2%; border-bottom-right-radius: 2%; } .featured-area .penci-image-holder, .featured-area .penci-slider4-overlay, .featured-area .penci-slide-overlay .overlay-link, .featured-style-29 .featured-slider-overlay, .penci-slider38-overlay{ border-radius: ; -webkit-border-radius: ; } .penci-featured-content-right:before{ border-top-right-radius: 2%; border-bottom-right-radius: 2%; } .penci-flat-overlay .penci-slide-overlay .penci-mag-featured-content:before{ border-bottom-left-radius: 2%; border-bottom-right-radius: 2%; } .container-single .post-image{ border-radius: ; -webkit-border-radius: ; } .penci-mega-thumbnail .penci-image-holder{ border-radius: ; -webkit-border-radius: ; } body.penci-body-boxed { background-color:#dd8a0d; } body.penci-body-boxed { background-size:auto; } #logo a { max-width:350px; width: 100%; } @media only screen and (max-width: 960px) and (min-width: 768px){ #logo img{ max-width: 100%; } } body{ --pcaccent-cl: #ffa41b; } .penci-menuhbg-toggle:hover .lines-button:after, .penci-menuhbg-toggle:hover .penci-lines:before, .penci-menuhbg-toggle:hover .penci-lines:after,.tags-share-box.tags-share-box-s2 .post-share-plike,.penci-video_playlist .penci-playlist-title,.pencisc-column-2.penci-video_playlist .penci-video-nav .playlist-panel-item, .pencisc-column-1.penci-video_playlist .penci-video-nav .playlist-panel-item,.penci-video_playlist .penci-custom-scroll::-webkit-scrollbar-thumb, .pencisc-button, .post-entry .pencisc-button, .penci-dropcap-box, .penci-dropcap-circle, .penci-login-register input[type="submit"]:hover, .penci-ld .penci-ldin:before, .penci-ldspinner > div{ background: #ffa41b; } a, .post-entry .penci-portfolio-filter ul li a:hover, .penci-portfolio-filter ul li a:hover, .penci-portfolio-filter ul li.active a, .post-entry .penci-portfolio-filter ul li.active a, .penci-countdown .countdown-amount, .archive-box h1, .post-entry a, .container.penci-breadcrumb span a:hover,.container.penci-breadcrumb a:hover, .post-entry blockquote:before, .post-entry blockquote cite, .post-entry blockquote .author, .wpb_text_column blockquote:before, .wpb_text_column blockquote cite, .wpb_text_column blockquote .author, .penci-pagination a:hover, ul.penci-topbar-menu > li a:hover, div.penci-topbar-menu > ul > li a:hover, .penci-recipe-heading a.penci-recipe-print,.penci-review-metas .penci-review-btnbuy, .main-nav-social a:hover, .widget-social .remove-circle a:hover i, .penci-recipe-index .cat > a.penci-cat-name, #bbpress-forums li.bbp-body ul.forum li.bbp-forum-info a:hover, #bbpress-forums li.bbp-body ul.topic li.bbp-topic-title a:hover, #bbpress-forums li.bbp-body ul.forum li.bbp-forum-info .bbp-forum-content a, #bbpress-forums li.bbp-body ul.topic p.bbp-topic-meta a, #bbpress-forums .bbp-breadcrumb a:hover, #bbpress-forums .bbp-forum-freshness a:hover, #bbpress-forums .bbp-topic-freshness a:hover, #buddypress ul.item-list li div.item-title a, #buddypress ul.item-list li h4 a, #buddypress .activity-header a:first-child, #buddypress .comment-meta a:first-child, #buddypress .acomment-meta a:first-child, div.bbp-template-notice a:hover, .penci-menu-hbg .menu li a .indicator:hover, .penci-menu-hbg .menu li a:hover, #sidebar-nav .menu li a:hover, .penci-rlt-popup .rltpopup-meta .rltpopup-title:hover, .penci-video_playlist .penci-video-playlist-item .penci-video-title:hover, .penci_list_shortcode li:before, .penci-dropcap-box-outline, .penci-dropcap-circle-outline, .penci-dropcap-regular, .penci-dropcap-bold{ color: #ffa41b; } .penci-home-popular-post ul.slick-dots li button:hover, .penci-home-popular-post ul.slick-dots li.slick-active button, .post-entry blockquote .author span:after, .error-image:after, .error-404 .go-back-home a:after, .penci-header-signup-form, .woocommerce span.onsale, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce div.product .entry-summary div[itemprop="description"]:before, .woocommerce div.product .entry-summary div[itemprop="description"] blockquote .author span:after, .woocommerce div.product .woocommerce-tabs #tab-description blockquote .author span:after, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .pcheader-icon.shoping-cart-icon > a > span, #penci-demobar .buy-button, #penci-demobar .buy-button:hover, .penci-recipe-heading a.penci-recipe-print:hover,.penci-review-metas .penci-review-btnbuy:hover, .penci-review-process span, .penci-review-score-total, #navigation.menu-style-2 ul.menu ul.sub-menu:before, #navigation.menu-style-2 .menu ul ul.sub-menu:before, .penci-go-to-top-floating, .post-entry.blockquote-style-2 blockquote:before, #bbpress-forums #bbp-search-form .button, #bbpress-forums #bbp-search-form .button:hover, .wrapper-boxed .bbp-pagination-links span.current, #bbpress-forums #bbp_reply_submit:hover, #bbpress-forums #bbp_topic_submit:hover,#main .bbp-login-form .bbp-submit-wrapper button[type="submit"]:hover, #buddypress .dir-search input[type=submit], #buddypress .groups-members-search input[type=submit], #buddypress button:hover, #buddypress a.button:hover, #buddypress a.button:focus, #buddypress input[type=button]:hover, #buddypress input[type=reset]:hover, #buddypress ul.button-nav li a:hover, #buddypress ul.button-nav li.current a, #buddypress div.generic-button a:hover, #buddypress .comment-reply-link:hover, #buddypress input[type=submit]:hover, #buddypress div.pagination .pagination-links .current, #buddypress div.item-list-tabs ul li.selected a, #buddypress div.item-list-tabs ul li.current a, #buddypress div.item-list-tabs ul li a:hover, #buddypress table.notifications thead tr, #buddypress table.notifications-settings thead tr, #buddypress table.profile-settings thead tr, #buddypress table.profile-fields thead tr, #buddypress table.wp-profile-fields thead tr, #buddypress table.messages-notices thead tr, #buddypress table.forum thead tr, #buddypress input[type=submit] { background-color: #ffa41b; } .penci-pagination ul.page-numbers li span.current, #comments_pagination span { color: #fff; background: #ffa41b; border-color: #ffa41b; } .footer-instagram h4.footer-instagram-title > span:before, .woocommerce nav.woocommerce-pagination ul li span.current, .penci-pagination.penci-ajax-more a.penci-ajax-more-button:hover, .penci-recipe-heading a.penci-recipe-print:hover,.penci-review-metas .penci-review-btnbuy:hover, .home-featured-cat-content.style-14 .magcat-padding:before, .wrapper-boxed .bbp-pagination-links span.current, #buddypress .dir-search input[type=submit], #buddypress .groups-members-search input[type=submit], #buddypress button:hover, #buddypress a.button:hover, #buddypress a.button:focus, #buddypress input[type=button]:hover, #buddypress input[type=reset]:hover, #buddypress ul.button-nav li a:hover, #buddypress ul.button-nav li.current a, #buddypress div.generic-button a:hover, #buddypress .comment-reply-link:hover, #buddypress input[type=submit]:hover, #buddypress div.pagination .pagination-links .current, #buddypress input[type=submit], form.pc-searchform.penci-hbg-search-form input.search-input:hover, form.pc-searchform.penci-hbg-search-form input.search-input:focus, .penci-dropcap-box-outline, .penci-dropcap-circle-outline { border-color: #ffa41b; } .woocommerce .woocommerce-error, .woocommerce .woocommerce-info, .woocommerce .woocommerce-message { border-top-color: #ffa41b; } .penci-slider ol.penci-control-nav li a.penci-active, .penci-slider ol.penci-control-nav li a:hover, .penci-related-carousel .owl-dot.active span, .penci-owl-carousel-slider .owl-dot.active span{ border-color: #ffa41b; background-color: #ffa41b; } .woocommerce .woocommerce-message:before, .woocommerce form.checkout table.shop_table .order-total .amount, .woocommerce ul.products li.product .price ins, .woocommerce ul.products li.product .price, .woocommerce div.product p.price ins, .woocommerce div.product span.price ins, .woocommerce div.product p.price, .woocommerce div.product .entry-summary div[itemprop="description"] blockquote:before, .woocommerce div.product .woocommerce-tabs #tab-description blockquote:before, .woocommerce div.product .entry-summary div[itemprop="description"] blockquote cite, .woocommerce div.product .entry-summary div[itemprop="description"] blockquote .author, .woocommerce div.product .woocommerce-tabs #tab-description blockquote cite, .woocommerce div.product .woocommerce-tabs #tab-description blockquote .author, .woocommerce div.product .product_meta > span a:hover, .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .woocommerce ul.cart_list li .amount, .woocommerce ul.product_list_widget li .amount, .woocommerce table.shop_table td.product-name a:hover, .woocommerce table.shop_table td.product-price span, .woocommerce table.shop_table td.product-subtotal span, .woocommerce-cart .cart-collaterals .cart_totals table td .amount, .woocommerce .woocommerce-info:before, .woocommerce div.product span.price, .penci-container-inside.penci-breadcrumb span a:hover,.penci-container-inside.penci-breadcrumb a:hover { color: #ffa41b; } .standard-content .penci-more-link.penci-more-link-button a.more-link, .penci-readmore-btn.penci-btn-make-button a, .penci-featured-cat-seemore.penci-btn-make-button a{ background-color: #ffa41b; color: #fff; } .penci-vernav-toggle:before{ border-top-color: #ffa41b; color: #fff; } .headline-title { background-color: #ffa41b; } .headline-title.nticker-style-2:after, .headline-title.nticker-style-4:after{ border-color: #ffa41b; } body:not(.pcdm-enable) a.penci-topbar-post-title:hover { color: #ffa41b; } .headline-title { text-transform: none; } .penci-topbar-trending{ max-width: 800px; } ul.penci-topbar-menu > li > a, div.penci-topbar-menu > ul > li > a { font-size: 11px; } body:not(.pcdm-enable) ul.penci-topbar-menu > li a:hover, body:not(.pcdm-enable) div.penci-topbar-menu > ul > li a:hover { color: #ffa41b; } body:not(.pcdm-enable) .penci-topbar-social a:hover { color: #ffa41b; } #penci-login-popup:before{ opacity: ; } #navigation .menu > li > a:hover, #navigation .menu li.current-menu-item > a, #navigation .menu > li.current_page_item > a, #navigation .menu > li:hover > a, #navigation .menu > li.current-menu-ancestor > a, #navigation .menu > li.current-menu-item > a, #navigation .menu .sub-menu li a:hover, #navigation .menu .sub-menu li.current-menu-item > a, #navigation .sub-menu li:hover > a { color: #ffa41b; } #navigation ul.menu > li > a:before, #navigation .menu > ul > li > a:before { background: #ffa41b; } #navigation .penci-megamenu .penci-mega-child-categories a.cat-active, #navigation .menu .penci-megamenu .penci-mega-child-categories a:hover, #navigation .menu .penci-megamenu .penci-mega-latest-posts .penci-mega-post a:hover { color: #ffa41b; } #navigation .penci-megamenu .penci-mega-thumbnail .mega-cat-name { background: #ffa41b; } #navigation ul.menu > li > a, #navigation .menu > ul > li > a { font-size: 16px; } #navigation .menu .sub-menu li a:hover, #navigation .menu .sub-menu li.current-menu-item > a, #navigation .sub-menu li:hover > a { color: #ffa41b; } #navigation.menu-style-2 ul.menu ul.sub-menu:before, #navigation.menu-style-2 .menu ul ul.sub-menu:before { background-color: #ffa41b; } @media only screen and (min-width: 768px){ .penci-mag-featured-content h3 a, .featured-style-13 .penci-mag-featured-content h3 a, .featured-style-15 .penci-mag-featured-content h3 a, .featured-style-18 .penci-mag-featured-content h3 a, .featured-style-24 .penci-item-2 .penci-mag-featured-content h3 a { font-size: 15px; } } .penci-header-signup-form { padding-top: px; padding-bottom: px; } .penci-header-signup-form { background-color: #ffa41b; } .header-social a:hover i, .main-nav-social a:hover, .penci-menuhbg-toggle:hover .lines-button:after, .penci-menuhbg-toggle:hover .penci-lines:before, .penci-menuhbg-toggle:hover .penci-lines:after { color: #ffa41b; } #sidebar-nav .menu li a:hover, .header-social.sidebar-nav-social a:hover i, #sidebar-nav .menu li a .indicator:hover, #sidebar-nav .menu .sub-menu li a .indicator:hover{ color: #ffa41b; } #sidebar-nav-logo:before{ background-color: #ffa41b; } .penci-slide-overlay .overlay-link, .penci-slider38-overlay, .penci-flat-overlay .penci-slide-overlay .penci-mag-featured-content:before { opacity: ; } .penci-item-mag:hover .penci-slide-overlay .overlay-link, .featured-style-38 .item:hover .penci-slider38-overlay, .penci-flat-overlay .penci-item-mag:hover .penci-slide-overlay .penci-mag-featured-content:before { opacity: ; } .penci-featured-content .featured-slider-overlay { opacity: ; } .featured-style-29 .featured-slider-overlay { opacity: ; } .penci-standard-cat .cat > a.penci-cat-name { color: #ffa41b; } .penci-standard-cat .cat:before, .penci-standard-cat .cat:after { background-color: #ffa41b; } .standard-content .penci-post-box-meta .penci-post-share-box a:hover, .standard-content .penci-post-box-meta .penci-post-share-box a.liked { color: #ffa41b; } .header-standard .post-entry a:hover, .header-standard .author-post span a:hover, .standard-content a, .standard-content .post-entry a, .standard-post-entry a.more-link:hover, .penci-post-box-meta .penci-box-meta a:hover, .standard-content .post-entry blockquote:before, .post-entry blockquote cite, .post-entry blockquote .author, .standard-content-special .author-quote span, .standard-content-special .format-post-box .post-format-icon i, .standard-content-special .format-post-box .dt-special a:hover, .standard-content .penci-more-link a.more-link, .standard-content .penci-post-box-meta .penci-box-meta a:hover { color: #ffa41b; } .standard-content .penci-more-link.penci-more-link-button a.more-link{ background-color: #ffa41b; color: #fff; } .standard-content-special .author-quote span:before, .standard-content-special .author-quote span:after, .standard-content .post-entry ul li:before, .post-entry blockquote .author span:after, .header-standard:after { background-color: #ffa41b; } .penci-more-link a.more-link:before, .penci-more-link a.more-link:after { border-color: #ffa41b; } .penci-grid li .item h2 a, .penci-masonry .item-masonry h2 a { } .penci-grid .cat a.penci-cat-name, .penci-masonry .cat a.penci-cat-name, .penci-featured-infor .cat a.penci-cat-name, .grid-mixed .cat a.penci-cat-name, .overlay-header-box .cat a.penci-cat-name { text-transform: uppercase; } .penci-featured-infor .cat a.penci-cat-name, .penci-grid .cat a.penci-cat-name, .penci-masonry .cat a.penci-cat-name, .penci-featured-infor .cat a.penci-cat-name { color: #ffa41b; } .penci-featured-infor .cat a.penci-cat-name:after, .penci-grid .cat a.penci-cat-name:after, .penci-masonry .cat a.penci-cat-name:after, .penci-featured-infor .cat a.penci-cat-name:after{ border-color: #ffa41b; } .penci-post-share-box a.liked, .penci-post-share-box a:hover { color: #ffa41b; } .overlay-post-box-meta .overlay-share a:hover, .overlay-author a:hover, .penci-grid .standard-content-special .format-post-box .dt-special a:hover, .grid-post-box-meta span a:hover, .grid-post-box-meta span a.comment-link:hover, .penci-grid .standard-content-special .author-quote span, .penci-grid .standard-content-special .format-post-box .post-format-icon i, .grid-mixed .penci-post-box-meta .penci-box-meta a:hover { color: #ffa41b; } .penci-grid .standard-content-special .author-quote span:before, .penci-grid .standard-content-special .author-quote span:after, .grid-header-box:after, .list-post .header-list-style:after { background-color: #ffa41b; } .penci-grid .post-box-meta span:after, .penci-masonry .post-box-meta span:after { border-color: #ffa41b; } .penci-readmore-btn.penci-btn-make-button a{ background-color: #ffa41b; color: #fff; } .penci-grid li.typography-style .overlay-typography { opacity: ; } .penci-grid li.typography-style:hover .overlay-typography { opacity: ; } .penci-grid li.typography-style .item .main-typography h2 a:hover { color: #ffa41b; } .penci-grid li.typography-style .grid-post-box-meta span a:hover { color: #ffa41b; } .overlay-header-box .cat > a.penci-cat-name:hover { color: #ffa41b; } .header-standard h2 a, .overlay-header-box .overlay-title a, .penci-featured-infor .penci-entry-title{font-size:25px;} .penci-grid li .item h2 a, .penci-masonry .item-masonry h2 a{font-size:20px;} .penci-sidebar-content.style-7 .penci-border-arrow .inner-arrow:before, .penci-sidebar-content.style-9 .penci-border-arrow .inner-arrow:before { background-color: #ffa41b; } .penci-video_playlist .penci-video-playlist-item .penci-video-title:hover,.widget ul.side-newsfeed li .side-item .side-item-text h4 a:hover, .widget a:hover, .penci-sidebar-content .widget-social a:hover span, .widget-social a:hover span, .penci-tweets-widget-content .icon-tweets, .penci-tweets-widget-content .tweet-intents a, .penci-tweets-widget-content .tweet-intents span:after, .widget-social.remove-circle a:hover i , #wp-calendar tbody td a:hover, .penci-video_playlist .penci-video-playlist-item .penci-video-title:hover, .widget ul.side-newsfeed li .side-item .side-item-text .side-item-meta a:hover{ color: #ffa41b; } .widget .tagcloud a:hover, .widget-social a:hover i, .widget input[type="submit"]:hover,.penci-user-logged-in .penci-user-action-links a:hover,.penci-button:hover, .widget button[type="submit"]:hover { color: #fff; background-color: #ffa41b; border-color: #ffa41b; } .about-widget .about-me-heading:before { border-color: #ffa41b; } .penci-tweets-widget-content .tweet-intents-inner:before, .penci-tweets-widget-content .tweet-intents-inner:after, .pencisc-column-1.penci-video_playlist .penci-video-nav .playlist-panel-item, .penci-video_playlist .penci-custom-scroll::-webkit-scrollbar-thumb, .penci-video_playlist .penci-playlist-title { background-color: #ffa41b; } .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot.active span, .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot:hover span { border-color: #ffa41b; background-color: #ffa41b; } #footer-logo a{ max-width: 200px; } #footer-section .footer-menu li a { font-size: 15px; } #footer-copyright * { font-size: 14px; } #footer-copyright * { font-style: normal; } .footer-subscribe .widget .mc4wp-form input[type="submit"]:hover { background-color: #ffa41b; } ul.footer-socials li a:hover i { background-color: #ffa41b; border-color: #ffa41b; } ul.footer-socials li a:hover span { color: #ffa41b; } #footer-section .footer-menu li a:hover { color: #ffa41b; } .penci-go-to-top-floating { background-color: #ffa41b; } #footer-section a { color: #ffa41b; } .comment-content a, .container-single .post-entry a, .container-single .format-post-box .dt-special a:hover, .container-single .author-quote span, .container-single .author-post span a:hover, .post-entry blockquote:before, .post-entry blockquote cite, .post-entry blockquote .author, .wpb_text_column blockquote:before, .wpb_text_column blockquote cite, .wpb_text_column blockquote .author, .post-pagination a:hover, .author-content h5 a:hover, .author-content .author-social:hover, .item-related h3 a:hover, .container-single .format-post-box .post-format-icon i, .container.penci-breadcrumb.single-breadcrumb span a:hover,.container.penci-breadcrumb.single-breadcrumb a:hover, .penci_list_shortcode li:before, .penci-dropcap-box-outline, .penci-dropcap-circle-outline, .penci-dropcap-regular, .penci-dropcap-bold, .header-standard .post-box-meta-single .author-post span a:hover{ color: #ffa41b; } .container-single .standard-content-special .format-post-box, ul.slick-dots li button:hover, ul.slick-dots li.slick-active button, .penci-dropcap-box-outline, .penci-dropcap-circle-outline { border-color: #ffa41b; } ul.slick-dots li button:hover, ul.slick-dots li.slick-active button, #respond h3.comment-reply-title span:before, #respond h3.comment-reply-title span:after, .post-box-title:before, .post-box-title:after, .container-single .author-quote span:before, .container-single .author-quote span:after, .post-entry blockquote .author span:after, .post-entry blockquote .author span:before, .post-entry ul li:before, #respond #submit:hover, div.wpforms-container .wpforms-form.wpforms-form input[type=submit]:hover, div.wpforms-container .wpforms-form.wpforms-form button[type=submit]:hover, div.wpforms-container .wpforms-form.wpforms-form .wpforms-page-button:hover, .wpcf7 input[type="submit"]:hover, .widget_wysija input[type="submit"]:hover, .post-entry.blockquote-style-2 blockquote:before,.tags-share-box.tags-share-box-s2 .post-share-plike, .penci-dropcap-box, .penci-dropcap-circle, .penci-ldspinner > div{ background-color: #ffa41b; } .container-single .post-entry .post-tags a:hover { color: #fff; border-color: #ffa41b; background-color: #ffa41b; } .container-single .penci-standard-cat .cat > a.penci-cat-name { color: #ffa41b; } .container-single .penci-standard-cat .cat:before, .container-single .penci-standard-cat .cat:after { background-color: #ffa41b; } .container-single .single-post-title { text-transform: none; } @media only screen and (min-width: 769px){ .container-single .single-post-title { font-size: 39px; } } .container-single .single-post-title { } .list-post .header-list-style:after, .grid-header-box:after, .penci-overlay-over .overlay-header-box:after, .home-featured-cat-content .first-post .magcat-detail .mag-header:after { content: none; } .list-post .header-list-style, .grid-header-box, .penci-overlay-over .overlay-header-box, .home-featured-cat-content .first-post .magcat-detail .mag-header{ padding-bottom: 0; } #respond h3.comment-reply-title span:before, #respond h3.comment-reply-title span:after, .post-box-title:before, .post-box-title:after { content: none; display: none; } .container-single .post-share a:hover, .container-single .post-share a.liked, .page-share .post-share a:hover { color: #ffa41b; } .tags-share-box.tags-share-box-2_3 .post-share .count-number-like, .post-share .count-number-like { color: #ffa41b; } .penci-single-smaller-width { max-width: 780px; } .penci-rlt-popup .rltpopup-meta .rltpopup-title:hover{ color: #ffa41b; } ul.homepage-featured-boxes .penci-fea-in:hover h4 span { color: #ffa41b; } .penci-home-popular-post .item-related h3 a:hover { color: #ffa41b; } .home-featured-cat-content .magcat-detail h3 a:hover { color: #ffa41b; } .home-featured-cat-content .grid-post-box-meta span a:hover { color: #ffa41b; } .home-featured-cat-content .first-post .magcat-detail .mag-header:after { background: #ffa41b; } .penci-slider ol.penci-control-nav li a.penci-active, .penci-slider ol.penci-control-nav li a:hover { border-color: #ffa41b; background: #ffa41b; } .home-featured-cat-content .mag-photo .mag-overlay-photo { opacity: ; } .home-featured-cat-content .mag-photo:hover .mag-overlay-photo { opacity: ; } .inner-item-portfolio:hover .penci-portfolio-thumbnail a:after { opacity: ; } .su-button-center { margin-bottom: 15px; } .penci-block-vc .style-7.penci-border-arrow .inner-arrow:before, .penci-block-vc.style-9 .penci-border-arrow .inner-arrow:before { background-color: #ffa41b; } .penci_header.penci-header-builder.main-builder-header{}.penci-header-image-logo,.penci-header-text-logo{}.pc-logo-desktop.penci-header-image-logo img{}@media only screen and (max-width: 767px){.penci_navbar_mobile .penci-header-image-logo img{}}.penci_builder_sticky_header_desktop .penci-header-image-logo img{}.penci_navbar_mobile .penci-header-text-logo{}.penci_navbar_mobile .penci-header-image-logo img{}.penci_navbar_mobile .sticky-enable .penci-header-image-logo img{}.pb-logo-sidebar-mobile{}.pc-builder-element.pb-logo-sidebar-mobile img{}.pc-logo-sticky{}.pc-builder-element.pc-logo-sticky.pc-logo img{}.pc-builder-element.pc-main-menu{}.pc-builder-element.pc-second-menu{}.pc-builder-element.pc-third-menu{}.penci-builder.penci-builder-button.button-1{}.penci-builder.penci-builder-button.button-1:hover{}.penci-builder.penci-builder-button.button-2{}.penci-builder.penci-builder-button.button-2:hover{}.penci-builder.penci-builder-button.button-3{}.penci-builder.penci-builder-button.button-3:hover{}.penci-builder.penci-builder-button.button-mobile-1{}.penci-builder.penci-builder-button.button-mobile-1:hover{}.penci-builder.penci-builder-button.button-2{}.penci-builder.penci-builder-button.button-2:hover{}.penci-builder-mobile-sidebar-nav.penci-menu-hbg{border-width:0;}.pc-builder-menu.pc-dropdown-menu{}.pc-builder-element.pc-logo.pb-logo-mobile{}.pc-header-element.penci-topbar-social .pclogin-item a{}body.penci-header-preview-layout .wrapper-boxed{min-height:1500px}.penci_header_overlap .penci-desktop-topblock,.penci-desktop-topblock{border-width:0;}.penci_header_overlap .penci-desktop-topbar,.penci-desktop-topbar{border-width:0;}.penci_header_overlap .penci-desktop-midbar,.penci-desktop-midbar{border-width:0;}.penci_header_overlap .penci-desktop-bottombar,.penci-desktop-bottombar{border-width:0;}.penci_header_overlap .penci-desktop-bottomblock,.penci-desktop-bottomblock{border-width:0;}.penci_header_overlap .penci-sticky-top,.penci-sticky-top{border-width:0;}.penci_header_overlap .penci-sticky-mid,.penci-sticky-mid{border-width:0;}.penci_header_overlap .penci-sticky-bottom,.penci-sticky-bottom{border-width:0;}.penci_header_overlap .penci-mobile-topbar,.penci-mobile-topbar{border-width:0;}.penci_header_overlap .penci-mobile-midbar,.penci-mobile-midbar{border-width:0;}.penci_header_overlap .penci-mobile-bottombar,.penci-mobile-bottombar{border-width:0;} body { --pcdm_btnbg: rgba(0, 0, 0, .1); --pcdm_btnd: #666; --pcdm_btndbg: #fff; --pcdm_btnn: var(--pctext-cl); --pcdm_btnnbg: var(--pcbg-cl); } body.pcdm-enable { --pcbg-cl: #000000; --pcbg-l-cl: #1a1a1a; --pcbg-d-cl: #000000; --pctext-cl: #fff; --pcborder-cl: #313131; --pcborders-cl: #3c3c3c; --pcheading-cl: rgba(255,255,255,0.9); --pcmeta-cl: #999999; --pcl-cl: #fff; --pclh-cl: #ffa41b; --pcaccent-cl: #ffa41b; background-color: var(--pcbg-cl); color: var(--pctext-cl); } body.pcdark-df.pcdm-enable.pclight-mode { --pcbg-cl: #fff; --pctext-cl: #313131; --pcborder-cl: #dedede; --pcheading-cl: #313131; --pcmeta-cl: #888888; --pcaccent-cl: #ffa41b; }</style><script>
+var penciBlocksArray=[];
+var portfolioDataJs = portfolioDataJs || [];var PENCILOCALCACHE = {};
+		(function () {
+				"use strict";
+		
+				PENCILOCALCACHE = {
+					data: {},
+					remove: function ( ajaxFilterItem ) {
+						delete PENCILOCALCACHE.data[ajaxFilterItem];
+					},
+					exist: function ( ajaxFilterItem ) {
+						return PENCILOCALCACHE.data.hasOwnProperty( ajaxFilterItem ) && PENCILOCALCACHE.data[ajaxFilterItem] !== null;
+					},
+					get: function ( ajaxFilterItem ) {
+						return PENCILOCALCACHE.data[ajaxFilterItem];
+					},
+					set: function ( ajaxFilterItem, cachedData ) {
+						PENCILOCALCACHE.remove( ajaxFilterItem );
+						PENCILOCALCACHE.data[ajaxFilterItem] = cachedData;
+					}
+				};
+			}
+		)();function penciBlock() {
+		    this.atts_json = '';
+		    this.content = '';
+		}</script>
+<style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style><link rel="icon" href="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/03/sbb_logo.png?lossy=0&amp;strip=1&amp;webp=1" sizes="32x32">
+<link rel="icon" href="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/03/sbb_logo.png?lossy=0&amp;strip=1&amp;webp=1" sizes="192x192">
+<link rel="apple-touch-icon" href="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/03/sbb_logo.png?lossy=0&amp;strip=1&amp;webp=1">
+<meta name="msapplication-TileImage" content="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/03/sbb_logo.png?lossy=0&amp;strip=1&amp;webp=1">
+
+<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><style>.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style><style>.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style><style>.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style><style>.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style><style>.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style></head>
+
+<body class="post-template-default single single-post postid-647 single-format-standard soledad-ver-8-2-9 pclight-mode penci-body-single-style-8 penci-show-pthumb pcmn-drdw-style-slide_down pchds-default elementor-default elementor-kit-235" style="transform: none;" data-new-gr-c-s-check-loaded="14.1088.0" data-gr-ext-installed="">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 0.49803921568627"></fefuncr><fefuncg type="table" tableValues="0 0.49803921568627"></fefuncg><fefuncb type="table" tableValues="0 0.49803921568627"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 1"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0 1"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.54901960784314 0.98823529411765"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0.71764705882353 0.25490196078431"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 1"></fefuncr><fefuncg type="table" tableValues="0 0.27843137254902"></fefuncg><fefuncb type="table" tableValues="0.5921568627451 0.27843137254902"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 0"></fefuncr><fefuncg type="table" tableValues="0 0.64705882352941"></fefuncg><fefuncb type="table" tableValues="0 1"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.78039215686275 1"></fefuncr><fefuncg type="table" tableValues="0 0.94901960784314"></fefuncg><fefuncb type="table" tableValues="0.35294117647059 0.47058823529412"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.65098039215686 0.40392156862745"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0.44705882352941 0.4"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.098039215686275 1"></fefuncr><fefuncg type="table" tableValues="0 0.66274509803922"></fefuncg><fefuncb type="table" tableValues="0.84705882352941 0.41960784313725"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><div class="wrapper-boxed header-style-header-10 header-search-style-default" style="transform: none;">
+	<div class="penci-header-wrap"><div class="penci-top-bar no-social topbar-fullwidth">
+    <div class="container">
+        <div class="penci-headline" role="navigation">
+	                    <div class="pctopbar-item penci-topbar-trending">
+			<span class="headline-title nticker-style-1">TRENDING</span>
+				<span class="penci-trending-nav">
+			<a class="penci-slider-prev" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#" aria-label="Previous"><i class="penci-faicon fa fa-angle-left"></i></a>
+			<a class="penci-slider-next" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#" aria-label="Next"><i class="penci-faicon fa fa-angle-right"></i></a>
+		</span>
+		<div class="penci-owl-carousel penci-owl-carousel-slider penci-headline-posts owl-loaded owl-drag" data-auto="true" data-nav="false" data-autotime="3000" data-speed="200" data-anim="slideInUp">
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+					<div class="owl-stage-outer owl-height" style="height: 33.5px;"><div class="owl-stage" style="transform: translate3d(-4800px, 0px, 0px); transition: all 0s ease 0s; width: 16000px;"><div class="owl-item cloned" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2604/install-gimp-raspberry-pi.htm">How to install GIMP on Raspberry Pi</a>
+				</div></div><div class="owl-item cloned" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2566/take-screenshot-raspberry-pi-os.htm">How to take screenshot in Raspberry Pi OS</a>
+				</div></div><div class="owl-item cloned" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2556/install-teamviewer-on-raspberry-pi-4.htm">How to install TeamViewer on Raspberry Pi 4</a>
+				</div></div><div class="owl-item cloned" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2540/how-to-install-oracle-java-jdk-on-raspberry-pi.htm">How to install Oracle Java JDK on Raspberry Pi</a>
+				</div></div><div class="owl-item cloned" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2527/how-to-list-the-pre-installed-packages-in-raspberry-pi-os.htm">How to list the pre-installed packages in Raspberry Pi OS</a>
+				</div></div><div class="owl-item" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2672/how-to-backup-your-raspberry-pi-sd-card.htm">How to backup your Raspberry Pi SD card</a>
+				</div></div><div class="owl-item active" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2670/connect-raspberry-pi-remotely.htm">5 ways to connect to your Raspberry Pi remotely</a>
+				</div></div><div class="owl-item" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2634/disable-auto-login-raspberry-pi.htm">How to disable auto login in Raspberry Pi</a>
+				</div></div><div class="owl-item" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2614/install-guake-terminal-raspberry-pi-os.htm">How to install Guake Terminal on Raspberry Pi OS</a>
+				</div></div><div class="owl-item" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2605/how-to-change-the-raspberry-pi-hostname.htm">How to change the Raspberry Pi Hostname</a>
+				</div></div><div class="owl-item" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2604/install-gimp-raspberry-pi.htm">How to install GIMP on Raspberry Pi</a>
+				</div></div><div class="owl-item" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2566/take-screenshot-raspberry-pi-os.htm">How to take screenshot in Raspberry Pi OS</a>
+				</div></div><div class="owl-item" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2556/install-teamviewer-on-raspberry-pi-4.htm">How to install TeamViewer on Raspberry Pi 4</a>
+				</div></div><div class="owl-item" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2540/how-to-install-oracle-java-jdk-on-raspberry-pi.htm">How to install Oracle Java JDK on Raspberry Pi</a>
+				</div></div><div class="owl-item" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2527/how-to-list-the-pre-installed-packages-in-raspberry-pi-os.htm">How to list the pre-installed packages in Raspberry Pi OS</a>
+				</div></div><div class="owl-item cloned" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2672/how-to-backup-your-raspberry-pi-sd-card.htm">How to backup your Raspberry Pi SD card</a>
+				</div></div><div class="owl-item cloned" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2670/connect-raspberry-pi-remotely.htm">5 ways to connect to your Raspberry Pi remotely</a>
+				</div></div><div class="owl-item cloned" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2634/disable-auto-login-raspberry-pi.htm">How to disable auto login in Raspberry Pi</a>
+				</div></div><div class="owl-item cloned" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2614/install-guake-terminal-raspberry-pi-os.htm">How to install Guake Terminal on Raspberry Pi OS</a>
+				</div></div><div class="owl-item cloned" style="width: 800px;"><div>
+					<a class="penci-topbar-post-title" href="https://singleboardbytes.com/2605/how-to-change-the-raspberry-pi-hostname.htm">How to change the Raspberry Pi Hostname</a>
+				</div></div></div></div><div class="owl-nav disabled"><div class="owl-prev"><i class="penciicon-left-chevron"></i></div><div class="owl-next"><i class="penciicon-right-chevron"></i></div></div><div class="owl-dots disabled"></div></div>
+	</div>        </div>
+    </div>
+</div>
+<header id="header" class="header-header-10 has-bottom-line">
+							<div id="navigation-sticky-wrapper" class="sticky-wrapper is-sticky" style="height: 81px;"><nav id="navigation" class="header-layout-bottom header-10 menu-style-2 menu-item-padding" role="navigation" style="position: fixed; top: 0px;">
+            <div class="container container-1400">
+                <div class="button-menu-mobile header-10"><svg width="18px" height="18px" viewBox="0 0 512 384" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill-rule="evenodd"><g transform="translate(0.000000, 0.250080)"><rect x="0" y="0" width="512" height="62"></rect><rect x="0" y="161" width="512" height="62"></rect><rect x="0" y="321" width="512" height="62"></rect></g></g></svg></div>
+				<div class="penci-menu-wrap"><ul id="menu-main-menu" class="menu"><li id="menu-item-54" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54"><a href="https://singleboardbytes.com/news">News</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52"><a href="https://singleboardbytes.com/downloads">Downloads</a></li>
+</ul><div id="logo">
+	    <a href="https://singleboardbytes.com/">
+        <img class="penci-mainlogo penci-limg penci-logo" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/logo_sbb1.png" alt="Single Board Bytes" width="3664" height="548">
+		    </a>
+	</div>
+<ul id="menu-main-menu-second" class="menu"><li id="menu-item-53" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53"><a href="https://singleboardbytes.com/education">Education</a></li>
+<li id="menu-item-55" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-55"><a href="https://singleboardbytes.com/projects">Projects</a></li>
+</ul></div><div class="penci-header-extra"><div id="top-search" class="penci-top-search pcheader-icon top-search-classes">
+    <a href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#" class="search-click">
+        <i class="penciicon-magnifiying-glass"></i>
+    </a>
+    <div class="show-search pcbds-default">
+		            <form role="search" method="get" class="pc-searchform" action="https://singleboardbytes.com/">
+                <div class="pc-searchform-inner">
+                    <input type="text" class="search-input" placeholder="Type and hit enter..." name="s">
+                    <i class="penciicon-magnifiying-glass"></i>
+                    <button type="submit" class="searchsubmit">Search</button>
+                </div>
+            </form>
+			        <a href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#" class="search-click close-search"><i class="penciicon-close-button"></i></a>
+    </div>
+</div>
+</div>			</div>
+		</nav></div>
+			</header>
+<!-- end #header -->
+</div>    <div class="penci-single-wrapper" style="transform: none;">
+        <div class="penci-single-block" style="transform: none;">
+			    <div class="container penci-breadcrumb single-breadcrumb">
+        <span><a class="crumb" href="https://singleboardbytes.com/">Home</a></span><i class="penci-faicon fa fa-angle-right"></i>		<span><a class="crumb" href="https://singleboardbytes.com/projects">Projects</a></span><i class="penci-faicon fa fa-angle-right"></i>        <span>How to install OpenCV on Raspberry Pi 4</span>
+    </div>
+            <div class="container container-single penci-single-style-8 penci-single-smore penci_sidebar  penci-enable-lightbox" style="transform: none;">
+                <div id="main" class="penci-main-sticky-sidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static;">
+																										<article id="post-647" class="post type-post status-publish">
+			        <div class="container-single penci-single-style-8  penci-header-text-white">
+			
+			<div class="post-image  penci-move-title-above">
+			<a href="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/OpenCV-Raspberry-Pi.png?lossy=0&amp;strip=1&amp;webp=1" data-rel="penci-gallery-bground-content"><span class="attachment-penci-full-thumb size-penci-full-thumb penci-single-featured-img wp-post-image penci-disable-lazy" style="background-image: url(https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/OpenCV-Raspberry-Pi-585x351.png?lossy=0&amp;strip=1&amp;webp=1);padding-top: 60.0000%;"></span></a><div class="standard-post-special_wrapper">    <div class="header-standard header-classic single-header">
+	    		        <h1 class="post-title single-post-title entry-title">How to install OpenCV on Raspberry Pi 4</h1>
+								            <div class="post-box-meta-single">
+				                    <span class="author-post byline"><span class="author vcard">by                                 <a class="author-url url fn n" href="https://singleboardbytes.com/author/tonyg">Tony G</a>
+		                    </span></span>
+								                    <span><time class="entry-date published" datetime="2021-05-10T23:54:25-04:00">May 10, 2021</time></span>
+																	            				            </div>
+					        </div>
+</div>		</div>
+	
+        </div>
+				
+	    <div class="sstyle-style-8 tags-share-box tags-share-box-top single-post-share tags-share-box-s2  tags-share-box-2_3  social-align-default post-share" style="opacity: 1;">
+		<span class="penci-social-share-text"><i class="penciicon-sharing"></i>Share</span>		
+					                <span class="post-share-item post-share-plike"><span class="count-number-like">0</span><a href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#" aria-label="Like this post" class="penci-post-like single-like-button" data-post_id="647" title="Like" data-like="Like" data-unlike="Unlike"><i class="penci-faicon fa fa-heart-o"></i></a></span><a class="new-ver-share post-share-item post-share-facebook show" aria-label="Share on Facebook" target="_blank" rel="noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm"><i class="penci-faicon fa fa-facebook"></i><span class="dt-share">Facebook</span></a><a class="new-ver-share post-share-item post-share-twitter show" aria-label="Share on Twitter" target="_blank" rel="noreferrer" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20article:%20How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204%20-%20https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm"><i class="penci-faicon fa fa-twitter"></i><span class="dt-share">Twitter</span></a><a class="new-ver-share post-share-item post-share-pinterest show" aria-label="Pin to Pinterest" data-pin-do="none" rel="noreferrer" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm&amp;media=https%3A%2F%2Fsingleboardbytes.com%2Fwp-content%2Fuploads%2Fsites%2F7%2F2021%2F04%2FOpenCV-Raspberry-Pi.png&amp;description=How+to+install+OpenCV+on+Raspberry+Pi+4"><i class="penci-faicon fa fa-pinterest"></i><span class="dt-share">Pinterest</span></a><a class="new-ver-share post-share-item post-share-linkedin show" aria-label="Share on LinkedIn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm&amp;title=How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204"><i class="penci-faicon fa fa-linkedin"></i><span class="dt-share">Linkedin</span></a><a class="new-ver-share post-share-item post-share-reddit show" aria-label="Share on Reddit" target="_blank" rel="noreferrer" href="https://reddit.com/submit?url=https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm&amp;title=How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204"><i class="penci-faicon fa fa-reddit-alien"></i><span class="dt-share">Reddit</span></a><a class="new-ver-share post-share-item post-share-whatsapp show" aria-label="Share on Whatsapp" target="_blank" rel="noreferrer" href="https://api.whatsapp.com/send?text=How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204%20%0A%0A%20https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm"><i class="penci-faicon fa fa-whatsapp"></i><span class="dt-share">Whatsapp</span></a><a class="new-ver-share post-share-item post-share-telegram show" aria-label="Share on Telegram" target="_blank" rel="noreferrer" href="https://telegram.me/share/url?url=https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm&amp;text=How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204"><i class="penci-faicon fa fa-telegram"></i><span class="dt-share">Telegram</span></a><a class="new-ver-share post-share-item post-share-email show" target="_blank" aria-label="Share via Email" rel="noreferrer" href="mailto:?subject=How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204&amp;BODY=https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm"><i class="penci-faicon fa fa-envelope"></i><span class="dt-share">Email</span></a><a class="post-share-item post-share-expand hidden" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#" aria-label="Share Expand" style=""><i class="penci-faicon penciicon-add"></i></a>		    </div>
+
+    <div class="post-entry blockquote-style-1">
+        <div class="inner-post-entry entry-content" id="penci-post-entry-inner">
+
+			
+			<p><span class="penci-dropcap-box">O</span>penCV is an open-source Python library whose main focus is computer vision, image processing, and ML (Machine Learning). The OpenCV library plays a huge role in real-time systems. It is capable of identifying photographs and videos and identifying human faces too. When used together with libraries such as Numpy, it is capable of processing the OpenCV array structure. That enables identifying image patterns and features where we use vector space and mathematical operations.</p>
+<p>OpenCV is available for several platforms, including Linux and Windows. In this tutorial, however, we will be installing OpenCV on our Raspberry Pi 4.</p>
+<div><div class="penci-custom-html-inside-content"><script async="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/f.txt"></script>
+<!-- Incontent1_SBB -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4052130819365638" data-ad-slot="4045588388" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><h2>Installing OpenCV on Raspberry Pi 4</h2>
+<p>There are two methods you can use:</p>
+<ol>
+<li>Compile OpenCV from source (highly recommended Raspberry installation)</li>
+<li>Install OpenCV using Python Pip.</li>
+</ol>
+<p>For those who have worked with OpenCV before, you know installing the library source can be quite a time-consuming and painstaking process. For Linux newbies, skipping a single step while executing the Terminal commands can lead to a fatal error. A solution to this is installing OpenCV via Python Pip. Pip is easier and much faster, but from experience, while working on several projects, I wouldn’t recommend it for a Raspberry installation. For large projects and even some educational projects, you would want to install OpenCV from the source. In this tutorial, we will look at both methods, and you can choose the one that works for you.</p>
+<h3>Requirements</h3>
+<ul>
+<li>A Raspberry Pi 4 board</li>
+<li>Raspberry Pi official operating system</li>
+<li>An active internet connection</li>
+<li>A reliable power supply</li>
+<li>Balena Etcher</li>
+<li>At least 8GB SD card</li>
+</ul>
+<p>With the above items, you can install OpenCV over SSH without the need for a graphical display. Do you know you can actually enable ssh and connect to wifi without a monitor on Raspberry Pi? Check our post – <a href="https://singleboardbytes.com/289/connect-wi-fi-enable-ssh-without-monitor-raspberry-pi.htm">Connecting to Wi-Fi &amp; Enabling SSH Without Monitor on Raspberry Pi.</a></p>
+<p>If you prefer doing everything via the Pi’s graphical interface, then you will need the additional items below:</p>
+<ul>
+<li>A monitor/ TV screen with HDMI support</li>
+<li>A micro-HDMI to HDMI cable: If your monitor doesn’t support a VGA-to-HDMI converter.</li>
+</ul>
+<h3>Install Raspberry Pi OS</h3>
+<p>The operating system of choice in this particular tutorial is the Official Raspberry PI OS. If you haven’t installed it, Download the image from the link below:</p>
+<p><strong><a href="https://www.raspberrypi.org/software/">Download Raspberry Pi OS</a></strong></p>
+<p>Once downloaded, use Balena Etcher to burn the operating system to the SD card. You can check our post on How to install Raspberry Pi OS, which will give you a step-by-step procedure on carrying out the installation.</p>
+<h3>Expand the Filesystem</h3>
+<p>The Raspberry Pi OS root system is set to 2GB size by default. This might not be enough for us since the OpenCV library can occupy quite some space leaving you with only a small amount to hold other files. A quick solution to this would be to expand the Pi’s file system to fill out the rest of the unused space. Follow the steps below:</p>
+<p>Launch the Terminal and execute the command below.</p>
+<pre>sudo raspi-config</pre>
+<p>That will open the Raspberry PI configuration tool window. Select Advanced Options and hit Enter.</p>
+<div id="attachment_774" style="width: 1021px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-774" decoding="async" class="size-full wp-image-774" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Raspi-configuration-tool.png" alt="raspi configuration tool" width="1011" height="365" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Raspi-configuration-tool.png?lossy=0&amp;strip=1&amp;webp=1 1011w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Raspi-configuration-tool-300x108.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Raspi-configuration-tool-768x277.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Raspi-configuration-tool-585x211.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 1011px) 100vw, 1011px"><p id="caption-attachment-774" class="wp-caption-text">Raspi configuration tool</p></div>
+<p>On the new window that appears, select <em>A1 Expand Filesystem</em> and hit <em>Enter</em>.</p>
+<div id="attachment_775" style="width: 1021px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-775" decoding="async" class="size-full wp-image-775" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Exapand-filesystem.png" alt="exapand filesystem" width="1011" height="369" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Exapand-filesystem.png?lossy=0&amp;strip=1&amp;webp=1 1011w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Exapand-filesystem-300x109.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Exapand-filesystem-768x280.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Exapand-filesystem-585x214.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 1011px) 100vw, 1011px"><p id="caption-attachment-775" class="wp-caption-text">Expand filesystem</p></div>
+<p>You will see a notification message –<em>“the filesystem will be resized”</em> on the next reboot. Click <em>OK</em> and reboot the Raspberry Pi. The process might take a couple of minutes – please be patient.</p>
+<h3>Install OpenCV dependencies</h3>
+<p>To get started, ensure you update your system by executing the commands below:</p>
+<pre>sudo apt update
+sudo apt upgrade</pre>
+<p>Next, we will install the <em>CMake</em> developer tool necessary for building OpenCV. Execute the command below:</p>
+<pre>sudo apt install build-essential cmake pkg-config</pre>
+<p>We will also install additional libraries for opening image files on our computer. That includes JPG, JPEG, PNG, et. Execute the command below:</p>
+<pre>sudo apt install libjpeg-dev libtiff5-dev libjasper-dev libpng-dev</pre>
+<p>Other than images, we also need libraries that will enable the use of video files. Install these libraries with the commands below:</p>
+<pre>sudo apt install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt install libxvidcore-dev libx264-dev</pre>
+<p>Now we have both images and videos sorted out. To display images on our computer screens and even develop Graphical User Interfaces (GUI) for our projects, we will need a module called <em>highgui</em>. That will require us to install all the necessary GTK libraries. Execute the commands below:</p>
+<pre>sudo apt install libfontconfig1-dev libcairo2-dev
+sudo apt install libgdk-pixbuf2.0-dev libpango1.0-dev
+sudo apt install libgtk2.0-dev libgtk-3-dev</pre>
+<p>For carrying out matrix operations, we will need to install additional dependencies. Execute the command below.</p>
+<pre>sudo apt install libatlas-base-dev gfortran</pre>
+<p>If you wish to install OpenCV via pip, install the additional libraries below necessary for HD5 datasets and the development of QT GUIs. There will be no problem even if you install OpenCV via source code. Execute the commands below:</p>
+<pre>sudo apt install libhdf5-dev libhdf5-serial-dev libhdf5-103
+sudo apt install libqt5gui5 libqt5webkit5 libqt5test5 python3-pyqt5</pre>
+<p>Lastly, we will need to install Python 3 header files necessary for compiling OpenCV. Execute the commands below:</p>
+<pre>sudo apt install python3-dev</pre>
+<div id="attachment_773" style="width: 984px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-773" decoding="async" class="size-full wp-image-773" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Install-Python3-dev-packages.png" alt="install python3 dev packages" width="974" height="176" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-Python3-dev-packages.png?lossy=0&amp;strip=1&amp;webp=1 974w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-Python3-dev-packages-300x54.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-Python3-dev-packages-768x139.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-Python3-dev-packages-585x106.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 974px) 100vw, 974px"><p id="caption-attachment-773" class="wp-caption-text">Install Python3-dev packages</p></div>
+<p>If your OS is up to date, you will probably see the message above. <em>“python3-dev is already the newest version.”</em></p>
+<h3>Install Numpy and create a Python Virtual environment</h3>
+<p>Virtual environments are beneficial as they create an isolated environment for running your Python projects. Therefore, every project in a virtual environment has its own set of dependencies and libraries regardless of the libraries available for other projects.</p>
+<p>To get started installing a virtual environment on our Raspberry, we will first need to install pip. Execute the commands below to install pip.</p>
+<pre>sudo apt-get install python3-pip</pre>
+<p>With pip installed, we can now proceed to install <em>virtualenv</em> and <em>virtualenvwrapper</em>. These are great packages that you can use to manage your virtual environments in Python. Execute the commands below.</p>
+<pre>sudo pip3 install virtualenv virtualenvwrapper</pre>
+<p>Once the installation completes, we will need to edit the <code>.bashrc</code> file and point to the locations of the <em>virtualenv</em> and <em>virtualenvwrapper</em>. Execute the command below to open the .bashrc file with the nano editor.</p>
+<pre>nano ~/.bashrc</pre>
+<p>Add the following lines at the bottom of the file.</p>
+<pre># virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh</pre>
+<p>Save the file (Ctrl + O, then Enter) and Exit (Ctrl + X). You will need to refresh the .bashrc file to apply the changes. Execute the command below.</p>
+<pre>source ~/.bashrc</pre>
+<p>Before getting started with OpenCV installation, we will need to create a virtual environment for our projects. Let’s call it <em>sbb_cv</em>. Execute the command below:</p>
+<pre>mkvirtualenv sbb_cv -p python3</pre>
+<p>You can use any name for the virtual environment, not necessarily <em>sbb_cv</em>. Additionally, if you are using a Raspberry Pi Camera for your projects, then you will need to install the PiCamera API with the command below:</p>
+<pre>pip3 install "picamera[array]"</pre>
+<p>Now we have all the necessary libraries, dependencies, and even a virtual environment set up. Let’s proceed to install OpenCV.</p>
+<h3>Install OpenCV</h3>
+<p>As described above, we will look at two ways which you can use to install OpenCV on your Raspberry.</p>
+<ol>
+<li>Method 1 – Install OpenCV with pip.</li>
+<li>Method 2 – Install OpenCV from the source.</li>
+</ol>
+<p>Please select one method which you will use for the rest of your installation process. You can’t use both.</p>
+<h3>Method 1: Install OpenCV with pip on Raspberry</h3>
+<p>This method is one of the easiest and fastest ways to install OpenCV on your Raspberry Pi. I would highly recommend this for beginners and if you are time conscious since it only takes a couple of minutes. Execute the commands below.</p>
+<p>If you had created a virtual environment, execute the command below to activate. If not, skip this step and proceed to install OpenCV</p>
+<pre>workon sbb_cv</pre>
+<div id="attachment_777" style="width: 936px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-777" decoding="async" class="size-full wp-image-777" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/activate-virtual-environment.png" alt="activate virtual environment" width="926" height="121" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/activate-virtual-environment.png?lossy=0&amp;strip=1&amp;webp=1 926w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/activate-virtual-environment-300x39.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/activate-virtual-environment-768x100.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/activate-virtual-environment-585x76.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 926px) 100vw, 926px"><p id="caption-attachment-777" class="wp-caption-text">activate virtual environment</p></div>
+<p>You will notice the terminal prompt change and now start with the name of the virtual environment. To exit the virtual environment, use the <code>deactivate</code> command.</p>
+<p>Once inside the virtual environment, you can now install OpenCV. Execute the command below.</p>
+<pre>pip3 install opencv-python</pre>
+<div id="attachment_776" style="width: 937px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-776" decoding="async" class="size-full wp-image-776" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Install-OpenCV-with-pip.png" alt="install opencv with pip" width="927" height="274" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-OpenCV-with-pip.png?lossy=0&amp;strip=1&amp;webp=1 927w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-OpenCV-with-pip-300x89.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-OpenCV-with-pip-768x227.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-OpenCV-with-pip-585x173.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 927px) 100vw, 927px" naptha_cursor="region"><p id="caption-attachment-776" class="wp-caption-text">Install OpenCV with pip</p></div>
+<p>From the image above, you can see we have successfully installed OpenCV version 4.5.1.48. That’s it! You are done with OpenCV installation. To test OpenCV in your project, skip to the Test section at the bottom of the article.</p>
+<h3>Method 2: Install OpenCV from the source</h3>
+<p>If you need a full installation of OpenCV, which includes patented algorithms, then you should use this method. Unlike the pip install method, which only takes a couple of minutes, compiling OpenCV from the source can take around two (2) hours. Follow the steps below:</p>
+<p>Step 1. Activate your virtual environment with the <code>workon</code> command below.</p>
+<pre>workon sbb_cv</pre>
+<p>Step 2. Download the source code for both OpenCV and Opencv_contrib from Github. Use the <code>wget</code> commands below.</p>
+<pre>wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.2.zip
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.2.zip</pre>
+<p>If you get an error like <em>‘wget command not found,’</em> then you will need to install it with the command – <code>sudo apt install wget</code></p>
+<p>Step 3. We need to unzip the contents of the two files we downloaded. Use the unzip command as shown below:</p>
+<pre>unzip opencv.zip
+unzip opencv_contrib.zip</pre>
+<p>Step 4. After extracting the zip files, we will have two folders – opencv-4.5.2 and opencv_contrib-4.5.1. Let’s rename these two to something memorable like opencv and opencv_contrib.</p>
+<pre>mv opencv-4.5.2 opencv
+mv opencv_contrib-4.5.1 opencv_contrib</pre>
+<div id="attachment_778" style="width: 936px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-778" decoding="async" class="size-full wp-image-778" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Rename-folders.png" alt="rename folders" width="926" height="92" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Rename-folders.png?lossy=0&amp;strip=1&amp;webp=1 926w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Rename-folders-300x30.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Rename-folders-768x76.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Rename-folders-585x58.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 926px) 100vw, 926px"><p id="caption-attachment-778" class="wp-caption-text">Rename folders</p></div>
+<p>Step 5. Compiling OpenCV can be quite heavy on the Raspberry Pi memory. To avoid freezing or hanging, we can increase the SWAP space and utilize all four cores of the Pi in the compiling process. To do so, we will edit the dphys-swapfile present in the /etc. directory. Execute the command below to open dphys-swapfile with the nano editor.</p>
+<pre>sudo nano /etc/dphys-swapfile</pre>
+<p>Find the line – CONF_SWAPSIZE and set its value to 2048. See the image below.</p>
+<div id="attachment_780" style="width: 954px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-780" decoding="async" class="size-full wp-image-780" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Increase-SWAP-space-1.png" alt="increase swap space" width="944" height="136" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Increase-SWAP-space-1.png?lossy=0&amp;strip=1&amp;webp=1 944w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Increase-SWAP-space-1-300x43.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Increase-SWAP-space-1-768x111.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Increase-SWAP-space-1-585x84.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 944px) 100vw, 944px"><p id="caption-attachment-780" class="wp-caption-text">Increase SWAP space</p></div>
+<p>Once done, save the file (Ctrl + O, then Enter) and Exit (Ctrl + X).</p>
+<p>To apply the changes, restart the SWAP service with the commands below:</p>
+<pre>sudo /etc/init.d/dphys-swapfile stop
+sudo /etc/init.d/dphys-swapfile start</pre>
+<p>Step 6. Now, we have everything set to start compiling and installing OpenCV. Activate the virtual environment with the <code>workon</code> command.</p>
+<pre>workon sbb_cv</pre>
+<p>Step 7. Install Numpy with the pip command.</p>
+<pre>pip3 install numpy</pre>
+<div id="attachment_781" style="width: 1022px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-781" decoding="async" class="size-full wp-image-781" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Install-Numpy.png" alt="install numpy" width="1012" height="140" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-Numpy.png?lossy=0&amp;strip=1&amp;webp=1 1012w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-Numpy-300x42.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-Numpy-768x106.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-Numpy-585x81.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 1012px) 100vw, 1012px"><p id="caption-attachment-781" class="wp-caption-text">Install Numpy</p></div>
+<p>Step 8. With NumPy installed, we can now start configuring OpenCV. Navigate to the OpenCV directory to get started.</p>
+<p><strong>Note:</strong> You need to be in the /opencv/build directory when executing the cmake command. You can use the <code>pwd</code> command to see your current working directory.</p>
+<pre>cd opencv
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+    -D ENABLE_NEON=ON \
+    -D ENABLE_VFPV3=ON \
+    -D BUILD_TESTS=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D OPENCV_ENABLE_NONFREE=ON \
+    -D CMAKE_SHARED_LINKER_FLAGS=-latomic \
+    -D BUILD_EXAMPLES=OFF ..</pre>
+<div id="attachment_782" style="width: 1022px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-782" decoding="async" class="size-full wp-image-782" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Configure-OpenCV.png" alt="configure opencv" width="1012" height="262" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Configure-OpenCV.png?lossy=0&amp;strip=1&amp;webp=1 1012w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Configure-OpenCV-300x78.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Configure-OpenCV-768x199.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Configure-OpenCV-585x151.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 1012px) 100vw, 1012px"><p id="caption-attachment-782" class="wp-caption-text">Configure OpenCV</p></div>
+<p>The <em>cmake</em> command might take a couple of minutes to execute. Please be patient.</p>
+<p>Step 9. We have already configured OpenCV for installation. Now let’s start compiling with all the Four cores of the Pi. Execute the command below:</p>
+<pre>make -j4</pre>
+<p>This is one of the longest steps. It might take between 1 to 4 hours, depending on the Raspberry Pi board you are using. As of writing this post, Raspberry Pi 4 is the fastest.</p>
+<div id="attachment_783" style="width: 1031px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-783" decoding="async" class="size-full wp-image-783" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Compiling-OpenCV.png" alt="compiling opencv" width="1021" height="274" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Compiling-OpenCV.png?lossy=0&amp;strip=1&amp;webp=1 1021w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Compiling-OpenCV-300x81.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Compiling-OpenCV-768x206.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Compiling-OpenCV-585x157.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 1021px) 100vw, 1021px"><p id="caption-attachment-783" class="wp-caption-text">Compiling OpenCV</p></div>
+<p>Step 10. Once the compiling process completes without an ERROR, we can now install OpenCV. Execute the commands below:</p>
+<pre>sudo make install
+sudo ldconfig</pre>
+<div id="attachment_784" style="width: 1008px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-784" decoding="async" class="size-full wp-image-784" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Install-OpenCV.png" alt="install opencv" width="998" height="203" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-OpenCV.png?lossy=0&amp;strip=1&amp;webp=1 998w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-OpenCV-300x61.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-OpenCV-768x156.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Install-OpenCV-585x119.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 998px) 100vw, 998px"><p id="caption-attachment-784" class="wp-caption-text">Install OpenCV</p></div>
+<p>Step 11. Since we are done with installing OpenCV, we can reset the SWAP size to 100MB. Edit the <code>/etc/dphys-swapfile</code> and set the value of CONF_SWAPSIZE to 100MB as described in Step 5 above. Remember to Restart the swap service with the commands below:</p>
+<pre>sudo /etc/init.d/dphys-swapfile stop 
+sudo /etc/init.d/dphys-swapfile start</pre>
+<p>Step 12. To finalize our installation, we will create symbolic links of <em>cv2</em> to our virtual environment – in this case, <em>sbb_cv</em>.</p>
+<p><strong>Note:</strong> The Python version and the virtual environment in the commands below might not be similar to yours. Therefore, copy-pasting these exact commands might raise an error. I advise you use the tab button to autocomplete the commands for you.</p>
+<pre>cd /usr/local/lib/python3.7/site-packages/cv2/python-3.7/
+sudo mv cv2.cpython-37m-arm-linux-gnueabihf.so cv2.so
+cd ~/.virtualenvs/sbb_cv/lib/python3.7/site-packages/
+ln -s /usr/local/lib/python3.7/site-packages/cv2/python-3.7/cv2.so cv2.so</pre>
+<p>That’s it! We have successfully installed OpenCV on our Raspberry Pi and can now test it in our projects.</p>
+<h3>Testing OpenCV module on Raspberry Pi</h3>
+<p>For this particular post, we will test OpenCV on a Python shell.</p>
+<pre>$ workon sbb_cv
+$ python3
+&gt;&gt;&gt; import cv2
+&gt;&gt;&gt; cv2.__version__
+'4.5.2'
+&gt;&gt;&gt;</pre>
+<div id="attachment_785" style="width: 1076px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-785" decoding="async" class="size-full wp-image-785" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/Test-OpenCV.png" alt="test opencv" width="1066" height="233" srcset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Test-OpenCV.png?lossy=0&amp;strip=1&amp;webp=1 1066w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Test-OpenCV-300x66.png?lossy=0&amp;strip=1&amp;webp=1 300w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Test-OpenCV-1024x224.png?lossy=0&amp;strip=1&amp;webp=1 1024w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Test-OpenCV-768x168.png?lossy=0&amp;strip=1&amp;webp=1 768w, https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2021/04/Test-OpenCV-585x128.png?lossy=0&amp;strip=1&amp;webp=1 585w" sizes="(max-width: 1066px) 100vw, 1066px"><p id="caption-attachment-785" class="wp-caption-text">Test OpenCV</p></div>
+<p>Congratulations! You have successfully installed OpenCV on your Raspberry Pi.</p>
+<h3>Conclusion</h3>
+<p>We have now come to the end of our tutorial. If you installed OpenCV with pip, I believe the process wasn’t complicated, and all went well. If you decided to install OpenCV by compiling the source code, I understand the process might have been quite hectic and time-consuming. Luckily, you now have all packages needed, including patented and non-patented algorithms. If you come across any error while executing the commands above, please leave a comment below and also remember to share the error message.</p>
+
+			
+            <div class="penci-single-link-pages">
+				            </div>
+			        </div>
+    </div>
+
+	        <div class="penci-google-adsense-2">
+			<script async="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/f.txt"></script>
+<!-- EndOfContent1_SBB -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4052130819365638" data-ad-slot="7270517520" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>        </div>
+	
+	    <div class="tags-share-box single-post-share tags-share-box-s2  tags-share-box-2_3  social-align-default post-share" style="opacity: 1;">
+		<span class="penci-social-share-text"><i class="penciicon-sharing"></i>Share</span>		
+					                <span class="post-share-item post-share-plike">
+					<span class="count-number-like">0</span><a href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#" aria-label="Like this post" class="penci-post-like single-like-button" data-post_id="647" title="Like" data-like="Like" data-unlike="Unlike"><i class="penci-faicon fa fa-heart-o"></i></a>					</span>
+						<a class="new-ver-share post-share-item post-share-facebook show" aria-label="Share on Facebook" target="_blank" rel="noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm"><i class="penci-faicon fa fa-facebook"></i><span class="dt-share">Facebook</span></a><a class="new-ver-share post-share-item post-share-twitter show" aria-label="Share on Twitter" target="_blank" rel="noreferrer" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20article:%20How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204%20-%20https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm"><i class="penci-faicon fa fa-twitter"></i><span class="dt-share">Twitter</span></a><a class="new-ver-share post-share-item post-share-pinterest show" aria-label="Pin to Pinterest" data-pin-do="none" rel="noreferrer" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm&amp;media=https%3A%2F%2Fsingleboardbytes.com%2Fwp-content%2Fuploads%2Fsites%2F7%2F2021%2F04%2FOpenCV-Raspberry-Pi.png&amp;description=How+to+install+OpenCV+on+Raspberry+Pi+4"><i class="penci-faicon fa fa-pinterest"></i><span class="dt-share">Pinterest</span></a><a class="new-ver-share post-share-item post-share-linkedin show" aria-label="Share on LinkedIn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm&amp;title=How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204"><i class="penci-faicon fa fa-linkedin"></i><span class="dt-share">Linkedin</span></a><a class="new-ver-share post-share-item post-share-reddit show" aria-label="Share on Reddit" target="_blank" rel="noreferrer" href="https://reddit.com/submit?url=https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm&amp;title=How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204"><i class="penci-faicon fa fa-reddit-alien"></i><span class="dt-share">Reddit</span></a><a class="new-ver-share post-share-item post-share-whatsapp show" aria-label="Share on Whatsapp" target="_blank" rel="noreferrer" href="https://api.whatsapp.com/send?text=How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204%20%0A%0A%20https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm"><i class="penci-faicon fa fa-whatsapp"></i><span class="dt-share">Whatsapp</span></a><a class="new-ver-share post-share-item post-share-telegram show" aria-label="Share on Telegram" target="_blank" rel="noreferrer" href="https://telegram.me/share/url?url=https%3A%2F%2Fsingleboardbytes.com%2F647%2Finstall-opencv-raspberry-pi-4.htm&amp;text=How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204"><i class="penci-faicon fa fa-telegram"></i><span class="dt-share">Telegram</span></a><a class="new-ver-share post-share-item post-share-email show" target="_blank" aria-label="Share via Email" rel="noreferrer" href="mailto:?subject=How%20to%20install%20OpenCV%20on%20Raspberry%20Pi%204&amp;BODY=https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm"><i class="penci-faicon fa fa-envelope"></i><span class="dt-share">Email</span></a><a class="post-share-item post-share-expand hidden" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#" aria-label="Share Expand" style=""><i class="penci-faicon penciicon-add"></i></a>		    </div>
+
+	
+	
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+							<div class="post-related penci-posts-related-grid">
+	        <div class="post-title-box"><h4 class="post-box-title">You may also like</h4></div>
+		        <div class="penci-related-carousel penci-related-grid-display">
+						                <div class="item-related">
+										                    <a class="related-thumb penci-image-holder penci-lazy" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2020/04/Insert-SD-card-585x390.jpg?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2672/how-to-backup-your-raspberry-pi-sd-card.htm" title="How to backup your Raspberry Pi SD card">
+													                        </a>
+						                        <h3>
+                            <a href="https://singleboardbytes.com/2672/how-to-backup-your-raspberry-pi-sd-card.htm">How to backup your Raspberry Pi SD card</a>
+                        </h3>
+						                </div>
+			                <div class="item-related">
+										                    <a class="related-thumb penci-image-holder penci-lazy" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/12/connect-to-your-Raspberry-Pi-remotely-585x390.png?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2670/connect-raspberry-pi-remotely.htm" title="5 ways to connect to your Raspberry Pi remotely">
+													                        </a>
+						                        <h3>
+                            <a href="https://singleboardbytes.com/2670/connect-raspberry-pi-remotely.htm">5 ways to connect to your Raspberry Pi...</a>
+                        </h3>
+						                </div>
+			                <div class="item-related">
+										                    <a class="related-thumb penci-image-holder penci-lazy" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/12/disable-auto-login-in-Raspberry-Pi--585x390.png?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2634/disable-auto-login-raspberry-pi.htm" title="How to disable auto login in Raspberry Pi">
+													                        </a>
+						                        <h3>
+                            <a href="https://singleboardbytes.com/2634/disable-auto-login-raspberry-pi.htm">How to disable auto login in Raspberry Pi</a>
+                        </h3>
+						                </div>
+			                <div class="item-related">
+										                    <a class="related-thumb penci-image-holder penci-lazy" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/12/Guake-Terminal-Screenshot-585x390.jpg?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2614/install-guake-terminal-raspberry-pi-os.htm" title="How to install Guake Terminal on Raspberry Pi OS">
+													                        </a>
+						                        <h3>
+                            <a href="https://singleboardbytes.com/2614/install-guake-terminal-raspberry-pi-os.htm">How to install Guake Terminal on Raspberry Pi...</a>
+                        </h3>
+						                </div>
+			                <div class="item-related">
+										                    <a class="related-thumb penci-image-holder penci-lazy" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/12/change-the-Raspberry-Pi-Hostname-585x390.png?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2605/how-to-change-the-raspberry-pi-hostname.htm" title="How to change the Raspberry Pi Hostname">
+													                        </a>
+						                        <h3>
+                            <a href="https://singleboardbytes.com/2605/how-to-change-the-raspberry-pi-hostname.htm">How to change the Raspberry Pi Hostname</a>
+                        </h3>
+						                </div>
+			                <div class="item-related">
+										                    <a class="related-thumb penci-image-holder penci-lazy" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/06/take-screenshot-in-Raspberry-Pi-OS-585x390.png?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2566/take-screenshot-raspberry-pi-os.htm" title="How to take screenshot in Raspberry Pi OS">
+													                        </a>
+						                        <h3>
+                            <a href="https://singleboardbytes.com/2566/take-screenshot-raspberry-pi-os.htm">How to take screenshot in Raspberry Pi OS</a>
+                        </h3>
+						                </div>
+			</div></div>			
+			
+		
+			
+			
+			
+							<div class="post-comments penci-comments-hide-1" id="comments">
+	<div class="post-title-box"><h4 class="post-box-title">20 comments</h4></div><div class="comments">		<div class="comment even thread-even depth-1" id="comment-21" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-21">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/33183048a00d21e9e9558f256a2a4492.png" srcset="https://secure.gravatar.com/avatar/33183048a00d21e9e9558f256a2a4492?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name"><a href="http://hidroflux.com/" rel="external nofollow ugc" class="url">Paulo</a></span></span>
+					<span class="date" datetime="2021-08-29T15:27:59-04:00" title="Sunday, August 29, 2021, 3:27 pm" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>August 29, 2021 - 3:27 pm</span>
+										<div class="comment-content" itemprop="commentText"><p>Hi, Everything runs OK till I type<br>
+import cv2<br>
+The error is as below:<br>
+(sbb_cv) pi@pi4:~ $ python3<br>
+Python 3.7.3 (default, Jan 22 2021, 20:04:44)<br>
+[GCC 8.3.0] on linux<br>
+Type “help”, “copyright”, “credits” or “license” for more information.<br>
+&gt;&gt;&gt; import cv2<br>
+Traceback (most recent call last):<br>
+  File “”, line 1, in<br>
+  File “/home/pi/.virtualenvs/sbb_cv/lib/python3.7/site-packages/cv2/__init__.py”, line 5, in<br>
+    from .cv2 import *<br>
+ImportError: libIlmImf-2_2.so.23: cannot open shared object file: No such file or directory<br>
+&gt;&gt;&gt;</p>
+<p>I used: Method 1: Install OpenCV with pip on Raspberry</p>
+<p>Thanks</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=21#respond" data-commentid="21" data-postid="647" data-belowelement="comment-21" data-respondelement="respond" data-replyto="Reply to Paulo" aria-label="Reply to Paulo">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+		<div class="comment odd alt thread-odd thread-alt depth-1" id="comment-29" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-29">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/491d5de5e45a6cf05bb4af62ff16543f.png" srcset="https://secure.gravatar.com/avatar/491d5de5e45a6cf05bb4af62ff16543f?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">rickey</span></span>
+					<span class="date" datetime="2021-11-17T19:34:13-05:00" title="Wednesday, November 17, 2021, 7:34 pm" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>November 17, 2021 - 7:34 pm</span>
+										<div class="comment-content" itemprop="commentText"><p>Pi4 with Bullseye OS 211118<br>
+sudo apt install libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5 no longer works.<br>
+This did<br>
+sudo apt install libqt5gui5 libqt5webkit5 libqt5test5 python3-pyqt5</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=29#respond" data-commentid="29" data-postid="647" data-belowelement="comment-29" data-respondelement="respond" data-replyto="Reply to rickey" aria-label="Reply to rickey">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+		<div class="comment even thread-even depth-1" id="comment-31" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-31">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/de317b4cc596f3c3e9ea5d327302eb58.png" srcset="https://secure.gravatar.com/avatar/de317b4cc596f3c3e9ea5d327302eb58?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Gusatvo</span></span>
+					<span class="date" datetime="2021-11-25T02:42:31-05:00" title="Thursday, November 25, 2021, 2:42 am" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>November 25, 2021 - 2:42 am</span>
+										<div class="comment-content" itemprop="commentText"><p>ok i have a question, how can i use this cv2 on my imported project?</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=31#respond" data-commentid="31" data-postid="647" data-belowelement="comment-31" data-respondelement="respond" data-replyto="Reply to Gusatvo" aria-label="Reply to Gusatvo">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+		<div class="comment odd alt thread-odd thread-alt depth-1" id="comment-43" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-43">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/29a3d31b07bd3cc75416aa992c1d3912.png" srcset="https://secure.gravatar.com/avatar/29a3d31b07bd3cc75416aa992c1d3912?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">allan</span></span>
+					<span class="date" datetime="2022-01-15T14:21:07-05:00" title="Saturday, January 15, 2022, 2:21 pm" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>January 15, 2022 - 2:21 pm</span>
+										<div class="comment-content" itemprop="commentText"><p>After following your instructions above and using pip for install how do I get access to cv2 using Thonny from raspberry pi desktop?</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=43#respond" data-commentid="43" data-postid="647" data-belowelement="comment-43" data-respondelement="respond" data-replyto="Reply to allan" aria-label="Reply to allan">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+		<div class="comment even thread-even depth-1" id="comment-48" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-48">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/d1ff2155507e4315afa353da59b90858.png" srcset="https://secure.gravatar.com/avatar/d1ff2155507e4315afa353da59b90858?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Puja</span></span>
+					<span class="date" datetime="2022-02-15T21:06:24-05:00" title="Tuesday, February 15, 2022, 9:06 pm" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>February 15, 2022 - 9:06 pm</span>
+										<div class="comment-content" itemprop="commentText"><p>Step 7. Install Numpy with the pip command.<br>
+pip3 install numpy<br>
+–&gt; error<br>
+note: This error originates from a subprocess, and is likely not a problem with pip.<br>
+  ERROR: Failed building wheel for numpy<br>
+Failed to build numpy<br>
+ERROR: Could not build wheels for numpy, which is required to install pyproject.toml-based projects<br>
+please help me</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=48#respond" data-commentid="48" data-postid="647" data-belowelement="comment-48" data-respondelement="respond" data-replyto="Reply to Puja" aria-label="Reply to Puja">Reply</a>											</span>
+				</div>
+			</div>
+			<div class="comment odd alt depth-2" id="comment-56" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-56">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/3480c29516085452fb7e56b874699283.png" srcset="https://secure.gravatar.com/avatar/3480c29516085452fb7e56b874699283?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Alfredo</span></span>
+					<span class="date" datetime="2022-03-09T19:22:45-05:00" title="Wednesday, March 9, 2022, 7:22 pm" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>March 9, 2022 - 7:22 pm</span>
+										<div class="comment-content" itemprop="commentText"><p>I have the same error, where you aible to solve it? I haven’t found any documentation about it</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=56#respond" data-commentid="56" data-postid="647" data-belowelement="comment-56" data-respondelement="respond" data-replyto="Reply to Alfredo" aria-label="Reply to Alfredo">Reply</a>											</span>
+				</div>
+			</div>
+			<div class="comment even depth-3" id="comment-82" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-82">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/54ceebce9887c179f7ff901af8f279f2.png" srcset="https://secure.gravatar.com/avatar/54ceebce9887c179f7ff901af8f279f2?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Fred</span></span>
+					<span class="date" datetime="2022-07-23T07:33:43-04:00" title="Saturday, July 23, 2022, 7:33 am" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>July 23, 2022 - 7:33 am</span>
+										<div class="comment-content" itemprop="commentText"><p>Yes – I found a fix after a long time.<br>
+For me on buster it was trying to do latest version of Numpy which was not compatible (only works on Bullseye)<br>
+You need to force it to use version 1.21.4 which was last version compatible with Buster and Python 3.7.3</p>
+<p>pip install numpy==1.21.4</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=82#respond" data-commentid="82" data-postid="647" data-belowelement="comment-82" data-respondelement="respond" data-replyto="Reply to Fred" aria-label="Reply to Fred">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+</div><!-- #comment-## -->
+</div><!-- #comment-## -->
+		<div class="comment odd alt thread-odd thread-alt depth-1" id="comment-51" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-51">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/bfccc7c0c18abd2ae601037e44a0586d.png" srcset="https://secure.gravatar.com/avatar/bfccc7c0c18abd2ae601037e44a0586d?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Vishal</span></span>
+					<span class="date" datetime="2022-02-25T23:19:09-05:00" title="Friday, February 25, 2022, 11:19 pm" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>February 25, 2022 - 11:19 pm</span>
+										<div class="comment-content" itemprop="commentText"><p>Im stuck @ [100%] Built target opencv_perf_gapi</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=51#respond" data-commentid="51" data-postid="647" data-belowelement="comment-51" data-respondelement="respond" data-replyto="Reply to Vishal" aria-label="Reply to Vishal">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+		<div class="comment even thread-even depth-1" id="comment-52" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-52">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/eb01f6e246c4837d3c62ed85186bb201.png" srcset="https://secure.gravatar.com/avatar/eb01f6e246c4837d3c62ed85186bb201?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Kej</span></span>
+					<span class="date" datetime="2022-03-01T13:38:38-05:00" title="Tuesday, March 1, 2022, 1:38 pm" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>March 1, 2022 - 1:38 pm</span>
+										<div class="comment-content" itemprop="commentText"><p>After I did all this i still get the error of no module name cv2 </p>
+<p>How do I fix this?</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=52#respond" data-commentid="52" data-postid="647" data-belowelement="comment-52" data-respondelement="respond" data-replyto="Reply to Kej" aria-label="Reply to Kej">Reply</a>											</span>
+				</div>
+			</div>
+			<div class="comment odd alt depth-2" id="comment-70" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-70">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/40135a61e893f878ed6e276321a4b35b.png" srcset="https://secure.gravatar.com/avatar/40135a61e893f878ed6e276321a4b35b?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Michael</span></span>
+					<span class="date" datetime="2022-06-01T04:24:06-04:00" title="Wednesday, June 1, 2022, 4:24 am" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>June 1, 2022 - 4:24 am</span>
+										<div class="comment-content" itemprop="commentText"><p>Hi KEJ,<br>
+I am having the same issue. Did you find a solution?</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=70#respond" data-commentid="70" data-postid="647" data-belowelement="comment-70" data-respondelement="respond" data-replyto="Reply to Michael" aria-label="Reply to Michael">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+</div><!-- #comment-## -->
+		<div class="comment even thread-odd thread-alt depth-1" id="comment-53" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-53">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/49637dc24e90feb5cfb67abd5dda0e28.png" srcset="https://secure.gravatar.com/avatar/49637dc24e90feb5cfb67abd5dda0e28?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Leela</span></span>
+					<span class="date" datetime="2022-03-04T10:29:33-05:00" title="Friday, March 4, 2022, 10:29 am" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>March 4, 2022 - 10:29 am</span>
+										<div class="comment-content" itemprop="commentText"><p>Having issues with the bashrc file setup….it says “no such file or directory” when trying to source it…</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=53#respond" data-commentid="53" data-postid="647" data-belowelement="comment-53" data-respondelement="respond" data-replyto="Reply to Leela" aria-label="Reply to Leela">Reply</a>											</span>
+				</div>
+			</div>
+			<div class="comment odd alt depth-2" id="comment-54" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-54">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/49637dc24e90feb5cfb67abd5dda0e28.png" srcset="https://secure.gravatar.com/avatar/49637dc24e90feb5cfb67abd5dda0e28?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Leela</span></span>
+					<span class="date" datetime="2022-03-04T11:05:28-05:00" title="Friday, March 4, 2022, 11:05 am" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>March 4, 2022 - 11:05 am</span>
+										<div class="comment-content" itemprop="commentText"><p>Actually bashrc is good now, having a new problem with mkvirtualenv….it says ‘virtualenv.create.via_global_ref.builtin.cpython.mac_oc’ have no clue what this is…!</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=54#respond" data-commentid="54" data-postid="647" data-belowelement="comment-54" data-respondelement="respond" data-replyto="Reply to Leela" aria-label="Reply to Leela">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+</div><!-- #comment-## -->
+		<div class="comment even thread-even depth-1" id="comment-55" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-55">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/49637dc24e90feb5cfb67abd5dda0e28.png" srcset="https://secure.gravatar.com/avatar/49637dc24e90feb5cfb67abd5dda0e28?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Leela</span></span>
+					<span class="date" datetime="2022-03-04T11:34:01-05:00" title="Friday, March 4, 2022, 11:34 am" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>March 4, 2022 - 11:34 am</span>
+										<div class="comment-content" itemprop="commentText"><p>problem with mkvirtualenv, it says the destination /home/pi/.virtualenv not writable…</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=55#respond" data-commentid="55" data-postid="647" data-belowelement="comment-55" data-respondelement="respond" data-replyto="Reply to Leela" aria-label="Reply to Leela">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+		<div class="comment odd alt thread-odd thread-alt depth-1" id="comment-57" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-57">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/68713ab167fee080fd72c1ecd573adbe.png" srcset="https://secure.gravatar.com/avatar/68713ab167fee080fd72c1ecd573adbe?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">lalai</span></span>
+					<span class="date" datetime="2022-03-11T12:50:59-05:00" title="Friday, March 11, 2022, 12:50 pm" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>March 11, 2022 - 12:50 pm</span>
+										<div class="comment-content" itemprop="commentText"><p>same problem. anyone with some solution please</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=57#respond" data-commentid="57" data-postid="647" data-belowelement="comment-57" data-respondelement="respond" data-replyto="Reply to lalai" aria-label="Reply to lalai">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+		<div class="comment even thread-even depth-1" id="comment-71" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-71">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/40135a61e893f878ed6e276321a4b35b.png" srcset="https://secure.gravatar.com/avatar/40135a61e893f878ed6e276321a4b35b?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Michael</span></span>
+					<span class="date" datetime="2022-06-01T04:31:10-04:00" title="Wednesday, June 1, 2022, 4:31 am" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>June 1, 2022 - 4:31 am</span>
+										<div class="comment-content" itemprop="commentText"><p>Hello, and thank you for your guide.<br>
+I was able to install everything using method #2. However when I try to test OpenCV I get an error message when trying to find cv2.  I also had trouble with Step 12 when it came to locating the “cd ~/.virtualenvs/sbb_cv/lib/python3.7/site-packages/” command. I used the tab and autocomplete button but it couldn’t find anything after /sbb_cv/.  Could this have something to do with the error message I get?</p>
+<p>Any help is greatly appreciated</p>
+<p>Thank you,</p>
+<p>Michael</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=71#respond" data-commentid="71" data-postid="647" data-belowelement="comment-71" data-respondelement="respond" data-replyto="Reply to Michael" aria-label="Reply to Michael">Reply</a>											</span>
+				</div>
+			</div>
+			<div class="comment odd alt depth-2" id="comment-72" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-72">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/40135a61e893f878ed6e276321a4b35b.png" srcset="https://secure.gravatar.com/avatar/40135a61e893f878ed6e276321a4b35b?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Michael</span></span>
+					<span class="date" datetime="2022-06-01T14:29:14-04:00" title="Wednesday, June 1, 2022, 2:29 pm" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>June 1, 2022 - 2:29 pm</span>
+										<div class="comment-content" itemprop="commentText"><p>Silly me. I tried again using method 1 and ended up at the exact same place. Only then did I realize I was supposed to type :</p>
+<p> workon sbb_cv<br>
+$ python3<br>
+&gt;&gt;&gt; import cv2<br>
+&gt;&gt;&gt; cv2.__version__</p>
+<p>myself.</p>
+<p>Thank you for a great tutorial.</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=72#respond" data-commentid="72" data-postid="647" data-belowelement="comment-72" data-respondelement="respond" data-replyto="Reply to Michael" aria-label="Reply to Michael">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+</div><!-- #comment-## -->
+		<div class="comment even thread-odd thread-alt depth-1" id="comment-73" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-73">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/69d12825ac5e31ec4ad297b7460a3299.png" srcset="https://secure.gravatar.com/avatar/69d12825ac5e31ec4ad297b7460a3299?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Bonzadog</span></span>
+					<span class="date" datetime="2022-06-03T04:05:37-04:00" title="Friday, June 3, 2022, 4:05 am" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>June 3, 2022 - 4:05 am</span>
+										<div class="comment-content" itemprop="commentText"><p>3.june.22<br>
+Hello</p>
+<p>A good tutoorial but when I implement this in a bash shell, I have problems with<br>
+activating the ven ( mine is called cv) inside a bash script.</p>
+<p>I really do not want to perform this manually!</p>
+<p>I have tried the source ~/cv/bin/activate || echo Activate failed ; exit 99<br>
+which fails and also open up another batch enviroment<br>
+I also tried this.<br>
+ /bin/bash -c ~/cv/bin/activate || echo Activate failed ; exit 99 </p>
+<p>With any help on this, I either do not use a venv OR perhaps use two bash scripts:</p>
+<p>1) Start batch one ( all the installs )<br>
+2) manually activate the active cv<br>
+3) start the second batch that compiles etc.</p>
+<p>Any help on this, please?</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=73#respond" data-commentid="73" data-postid="647" data-belowelement="comment-73" data-respondelement="respond" data-replyto="Reply to Bonzadog" aria-label="Reply to Bonzadog">Reply</a>											</span>
+				</div>
+			</div>
+			<div class="comment odd alt depth-2" id="comment-74" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-74">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/69d12825ac5e31ec4ad297b7460a3299.png" srcset="https://secure.gravatar.com/avatar/69d12825ac5e31ec4ad297b7460a3299?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Bonzadog</span></span>
+					<span class="date" datetime="2022-06-03T04:07:14-04:00" title="Friday, June 3, 2022, 4:07 am" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>June 3, 2022 - 4:07 am</span>
+										<div class="comment-content" itemprop="commentText"><p>Sorry, I forgot to add the */cv  exists.</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=74#respond" data-commentid="74" data-postid="647" data-belowelement="comment-74" data-respondelement="respond" data-replyto="Reply to Bonzadog" aria-label="Reply to Bonzadog">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+</div><!-- #comment-## -->
+		<div class="comment even thread-even depth-1" id="comment-75" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-75">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/69d12825ac5e31ec4ad297b7460a3299.png" srcset="https://secure.gravatar.com/avatar/69d12825ac5e31ec4ad297b7460a3299?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">Bonzadog</span></span>
+					<span class="date" datetime="2022-06-03T06:05:35-04:00" title="Friday, June 3, 2022, 6:05 am" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>June 3, 2022 - 6:05 am</span>
+										<div class="comment-content" itemprop="commentText"><p>3.6.2022<br>
+Hello,</p>
+<p>My last comment seems to have disappeared.</p>
+<p>Because I do not want to perform a manual installation, I put the commands into a bash shell.<br>
+My venv is called cv and is predefined outside the batch. so cv exists in my home area.</p>
+<p>The problem is now when I run my batch I have a problem activating the cv.<br>
+source ~/cv/bin/activate does not work correctly because it opens up a new shell<br>
+so I tried /bin/bash -c ~/bin/activate<br>
+that did not work either,</p>
+<p>I can either not use a venv and then it installs correctly<br>
+OR perhaps I perform:<br>
+1) Run a batch with the installs<br>
+2) manually activate and inside the cv environment<br>
+3) start the compile batch<br>
+Perhaps that would work</p>
+<p>Has anyone an idea how to get over this activate problem??</p>
+<p>Many thanks for any assistance.</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=75#respond" data-commentid="75" data-postid="647" data-belowelement="comment-75" data-respondelement="respond" data-replyto="Reply to Bonzadog" aria-label="Reply to Bonzadog">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+		<div class="comment odd alt thread-odd thread-alt depth-1" id="comment-79" itemprop="" itemscope="itemscope" itemtype="https://schema.org/UserComments">
+			<meta itemprop="discusses" content="How to install OpenCV on Raspberry Pi 4">
+            <link itemprop="url" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#comment-79">
+			<div class="thecomment">
+				<div class="author-img">
+					<img alt="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/a4b757e12bd9c4c8a354f55a27a42728.png" srcset="https://secure.gravatar.com/avatar/a4b757e12bd9c4c8a354f55a27a42728?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100" decoding="async">				</div>
+				<div class="comment-text">
+					<span class="author" itemprop="creator" itemtype="https://schema.org/Person"><span itemprop="name">John</span></span>
+					<span class="date" datetime="2022-06-19T23:57:21-04:00" title="Sunday, June 19, 2022, 11:57 pm" itemprop="commentTime"><i class="penci-faicon fa fa-clock-o"></i>June 19, 2022 - 11:57 pm</span>
+										<div class="comment-content" itemprop="commentText"><p>i get error with make -j4.. any solutions ?</p>
+</div>
+					<span class="reply">
+						<a rel="nofollow" class="comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm?replytocom=79#respond" data-commentid="79" data-postid="647" data-belowelement="comment-79" data-respondelement="respond" data-replyto="Reply to John" aria-label="Reply to John">Reply</a>											</span>
+				</div>
+			</div>
+	</div><!-- #comment-## -->
+</div><div id="comments_pagination"></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><span>Leave a Comment</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#respond" style="display:none;">Cancel Reply</a></small></h3><form action="https://singleboardbytes.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><input type="hidden" autocomplete="off" autocorrect="off" name="NAiJXjp-X-lN-H-s-wNU" value="Rm2q5nEKS2ULLgmWjnJkXPw6ahSSOi6mGdo3vVB3l9Ej99VYgqD6GW4IzkygEVhfNNebNw-_woiU9FDxVTd1DPuAjyM2KKECEWxYJCybxy65RQo64kAK8m0I0MXxNdtdc6MpLVn8-QI"><p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" placeholder="Your Comment" aria-required="true"></textarea></p><p class="comment-form-author"><input id="author" name="author" type="text" value="" placeholder="Name*" size="30" aria-required="true"></p>
+<p class="comment-form-email"><input id="email" name="email" type="text" value="" placeholder="Email*" size="30" aria-required="true"></p>
+
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><span class="comment-form-cookies-text" for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</span></p>
+<div class="penci-gdpr-message">* By using this form you agree with the storage and handling of your data by this website.</div><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit"> <input type="hidden" name="comment_post_ID" value="647" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><input name="P-Vp-pt-I-Ro-R-EjqS" type="hidden" value="1440521195.0truegecko537.36"></form>	</div><!-- #respond -->
+	</div> <!-- end comments div -->
+			
+		
+	
+</article>
+						                    </div>
+                </div>
+				
+<div id="sidebar" class="penci-sidebar-right penci-sidebar-content style-12 pcalign-center pcsb-boxed-whole pciconp-right pcicon-right penci-sticky-sidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 6857.61px;">
+    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: fixed; top: -133.445px; left: 986px; width: 298px;">
+		<aside id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/f.txt"></script>
+<!-- Sidebar1_SBB -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4052130819365638" data-ad-slot="4592383290" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside><aside id="penci_latest_news_widget-3" class="widget penci_latest_news_widget"><h3 class="widget-title penci-border-arrow"><span class="inner-arrow">Recent Posts</span></h3>                <ul data-settings="{&quot;title&quot;:&quot;Recent Posts&quot;,&quot;categories&quot;:&quot;all&quot;,&quot;orderby&quot;:&quot;date&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;number&quot;:&quot;6&quot;,&quot;offset&quot;:&quot;&quot;,&quot;title_length&quot;:&quot;&quot;,&quot;featured&quot;:null,&quot;twocolumn&quot;:&quot;on&quot;,&quot;featured2&quot;:null,&quot;allfeatured&quot;:null,&quot;thumbright&quot;:null,&quot;postdate&quot;:&quot;on&quot;,&quot;icon&quot;:null,&quot;image_type&quot;:&quot;default&quot;,&quot;ptfsfe&quot;:&quot;&quot;,&quot;ptfs&quot;:&quot;&quot;,&quot;pmfs&quot;:&quot;&quot;}" data-paged="1" data-action="penci_latest_news_widget_ajax" data-mes="Sorry, No more posts" data-max="23" id="penci-latestwg-8891" class="side-newsfeed penci-feed-2columns penci-2columns-feed">
+					                        <li class="penci-feed">
+							                            <div class="side-item">
+								                                    <div class="side-image">
+																				                                            <a class="penci-image-holder penci-lazy small-fix-size lazyloaded pcloaded" rel="bookmark" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/12/disable-auto-login-in-Raspberry-Pi--263x175.png?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2634/disable-auto-login-raspberry-pi.htm" title="How to disable auto login in Raspberry Pi" data-ll-status="loaded" style="background-image: url(&quot;https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/12/disable-auto-login-in-Raspberry-Pi--263x175.png?lossy=0&amp;strip=1&amp;webp=1&quot;);"></a>
+										
+										                                    </div>
+								                                <div class="side-item-text">
+									
+                                    <h4 class="side-title-post">
+                                        <a href="https://singleboardbytes.com/2634/disable-auto-login-raspberry-pi.htm" rel="bookmark" title="How to disable auto login in Raspberry Pi">
+											How to disable auto login in Raspberry Pi                                        </a>
+                                    </h4>
+									                                </div>
+                            </div>
+                        </li>
+						                        <li class="penci-feed">
+							                            <div class="side-item">
+								                                    <div class="side-image">
+																				                                            <a class="penci-image-holder penci-lazy small-fix-size lazyloaded pcloaded" rel="bookmark" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/12/Guake-Terminal-Screenshot-263x175.jpg?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2614/install-guake-terminal-raspberry-pi-os.htm" title="How to install Guake Terminal on Raspberry Pi OS" data-ll-status="loaded" style="background-image: url(&quot;https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/12/Guake-Terminal-Screenshot-263x175.jpg?lossy=0&amp;strip=1&amp;webp=1&quot;);"></a>
+										
+										                                    </div>
+								                                <div class="side-item-text">
+									
+                                    <h4 class="side-title-post">
+                                        <a href="https://singleboardbytes.com/2614/install-guake-terminal-raspberry-pi-os.htm" rel="bookmark" title="How to install Guake Terminal on Raspberry Pi OS">
+											How to install Guake Terminal on Raspberry Pi OS                                        </a>
+                                    </h4>
+									                                </div>
+                            </div>
+                        </li>
+						                        <li class="penci-feed">
+							                            <div class="side-item">
+								                                    <div class="side-image">
+																				                                            <a class="penci-image-holder penci-lazy small-fix-size lazyloaded pcloaded" rel="bookmark" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/12/change-the-Raspberry-Pi-Hostname-263x175.png?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2605/how-to-change-the-raspberry-pi-hostname.htm" title="How to change the Raspberry Pi Hostname" data-ll-status="loaded" style="background-image: url(&quot;https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/12/change-the-Raspberry-Pi-Hostname-263x175.png?lossy=0&amp;strip=1&amp;webp=1&quot;);"></a>
+										
+										                                    </div>
+								                                <div class="side-item-text">
+									
+                                    <h4 class="side-title-post">
+                                        <a href="https://singleboardbytes.com/2605/how-to-change-the-raspberry-pi-hostname.htm" rel="bookmark" title="How to change the Raspberry Pi Hostname">
+											How to change the Raspberry Pi Hostname                                        </a>
+                                    </h4>
+									                                </div>
+                            </div>
+                        </li>
+						                        <li class="penci-feed">
+							                            <div class="side-item">
+								                                    <div class="side-image">
+																				                                            <a class="penci-image-holder penci-lazy small-fix-size lazyloaded pcloaded" rel="bookmark" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/08/gimp-Raspberry-Pi-263x175.png?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2604/install-gimp-raspberry-pi.htm" title="How to install GIMP on Raspberry Pi" data-ll-status="loaded" style="background-image: url(&quot;https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/08/gimp-Raspberry-Pi-263x175.png?lossy=0&amp;strip=1&amp;webp=1&quot;);"></a>
+										
+										                                    </div>
+								                                <div class="side-item-text">
+									
+                                    <h4 class="side-title-post">
+                                        <a href="https://singleboardbytes.com/2604/install-gimp-raspberry-pi.htm" rel="bookmark" title="How to install GIMP on Raspberry Pi">
+											How to install GIMP on Raspberry Pi                                        </a>
+                                    </h4>
+									                                </div>
+                            </div>
+                        </li>
+						                        <li class="penci-feed">
+							                            <div class="side-item">
+								                                    <div class="side-image">
+																				                                            <a class="penci-image-holder penci-lazy small-fix-size lazyloaded pcloaded" rel="bookmark" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/06/take-screenshot-in-Raspberry-Pi-OS-263x175.png?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2566/take-screenshot-raspberry-pi-os.htm" title="How to take screenshot in Raspberry Pi OS" data-ll-status="loaded" style="background-image: url(&quot;https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/06/take-screenshot-in-Raspberry-Pi-OS-263x175.png?lossy=0&amp;strip=1&amp;webp=1&quot;);"></a>
+										
+										                                    </div>
+								                                <div class="side-item-text">
+									
+                                    <h4 class="side-title-post">
+                                        <a href="https://singleboardbytes.com/2566/take-screenshot-raspberry-pi-os.htm" rel="bookmark" title="How to take screenshot in Raspberry Pi OS">
+											How to take screenshot in Raspberry Pi OS                                        </a>
+                                    </h4>
+									                                </div>
+                            </div>
+                        </li>
+						                        <li class="penci-feed">
+							                            <div class="side-item">
+								                                    <div class="side-image">
+																				                                            <a class="penci-image-holder penci-lazy small-fix-size lazyloaded pcloaded" rel="bookmark" data-bgset="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/06/TeamViewer-on-Raspberry-Pi-263x175.png?lossy=0&amp;strip=1&amp;webp=1" href="https://singleboardbytes.com/2556/install-teamviewer-on-raspberry-pi-4.htm" title="How to install TeamViewer on Raspberry Pi 4" data-ll-status="loaded" style="background-image: url(&quot;https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2022/06/TeamViewer-on-Raspberry-Pi-263x175.png?lossy=0&amp;strip=1&amp;webp=1&quot;);"></a>
+										
+										                                    </div>
+								                                <div class="side-item-text">
+									
+                                    <h4 class="side-title-post">
+                                        <a href="https://singleboardbytes.com/2556/install-teamviewer-on-raspberry-pi-4.htm" rel="bookmark" title="How to install TeamViewer on Raspberry Pi 4">
+											How to install TeamViewer on Raspberry Pi 4                                        </a>
+                                    </h4>
+									                                </div>
+                            </div>
+                        </li>
+						                </ul>
+				</aside><aside id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/f.txt"></script>
+<!-- Sidebar2_SBB -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4052130819365638" data-ad-slot="6695802458" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside><aside id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/f.txt"></script>
+<!-- Sidebar3_SBB -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4052130819365638" data-ad-slot="9130394105" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside>    </div>
+</div>
+            </div>
+			        </div>
+</div>
+
+
+    <div class="clear-footer"></div>
+
+											        <footer id="footer-section" class="penci-footer-social-media penci-lazy">
+            <div class="container">
+												                    <div class="footer-logo-copyright">
+						                            <div id="footer-logo">
+                                <a href="https://singleboardbytes.com/">
+									                                        <img class="penci-lazy" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%203664%20548&#39;%3E%3C/svg%3E" data-src="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2020/04/logo_sbb1.png?lossy=0&amp;strip=1&amp;webp=1" alt="Footer Logo" width="3664" height="548">
+									                                </a>
+                            </div>
+						
+						                            <div class="footer-menu-wrap" role="navigation">
+								<ul id="menu-miscellaneous-bar" class="footer-menu"><li id="menu-item-1535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1535"><a href="https://singleboardbytes.com/contact-us">Contact us</a></li>
+<li id="menu-item-1536" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1536"><a href="https://singleboardbytes.com/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-1537" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1537"><a href="https://singleboardbytes.com/disclaimers">Disclaimers</a></li>
+</ul>                            </div>
+						
+						                            <div id="footer-copyright">
+                                <p>@2020-21 All Right Reserved.</p>
+                            </div>
+												                            <div class="go-to-top-parent"><a aria-label="Go to top" href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#" class="go-to-top"><span><i class="penciicon-up-chevron"></i> <br>Back To Top</span></a>
+                            </div>
+						                    </div>
+				            </div>
+        </footer>
+	</div><!-- End .wrapper-boxed -->
+
+    <a href="https://singleboardbytes.com/647/install-opencv-raspberry-pi-4.htm#" id="close-sidebar-nav" class="header-10"><i class="penci-faicon fa fa-close"></i></a>
+    <nav id="sidebar-nav" class="header-10" role="navigation">
+
+		            <div id="sidebar-nav-logo">
+									                        <a href="https://singleboardbytes.com/"><img class="penci-lazy penci-limg" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%203664%20548&#39;%3E%3C/svg%3E" width="3664" height="548" data-src="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2020/04/logo_sbb1.png?lossy=0&amp;strip=1&amp;webp=1" data-lightlogo="https://786647.smushcdn.com/1501109/wp-content/uploads/sites/7/2020/04/logo_sbb1.png?lossy=0&amp;strip=1&amp;webp=1" alt="Single Board Bytes"></a>
+									            </div>
+		
+		            <div class="header-social sidebar-nav-social">
+				<div class="inner-header-social">
+	</div>            </div>
+		
+		
+		<ul id="menu-main-menu-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54"><a href="https://singleboardbytes.com/news">News</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52"><a href="https://singleboardbytes.com/downloads">Downloads</a></li>
+</ul><div id="logo">
+	    <a href="https://singleboardbytes.com/">
+        <img class="penci-mainlogo penci-limg penci-logo" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/logo_sbb1.png" alt="Single Board Bytes" width="3664" height="548">
+		    </a>
+	</div>
+<ul id="menu-main-menu-second" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53"><a href="https://singleboardbytes.com/education">Education</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-55"><a href="https://singleboardbytes.com/projects">Projects</a></li>
+</ul>    </nav>
+
+
+
+<script type="text/javascript">!function(t,e){"use strict";function n(){if(!a){a=!0;for(var t=0;t<d.length;t++)d[t].fn.call(window,d[t].ctx);d=[]}}function o(){"complete"===document.readyState&&n()}t=t||"docReady",e=e||window;var d=[],a=!1,c=!1;e[t]=function(t,e){return a?void setTimeout(function(){t(e)},1):(d.push({fn:t,ctx:e}),void("complete"===document.readyState||!document.attachEvent&&"interactive"===document.readyState?setTimeout(n,1):c||(document.addEventListener?(document.addEventListener("DOMContentLoaded",n,!1),window.addEventListener("load",n,!1)):(document.attachEvent("onreadystatechange",o),window.attachEvent("onload",n)),c=!0)))}}("wpBruiserDocReady",window);
+			(function(){var wpbrLoader = (function(){var g=document,b=g.createElement('script'),c=g.scripts[0];b.async=1;b.src='https://singleboardbytes.com/?gdbc-client=3.1.43-'+(new Date()).getTime();c.parentNode.insertBefore(b,c);});wpBruiserDocReady(wpbrLoader);window.onunload=function(){};window.addEventListener('pageshow',function(event){if(event.persisted){(typeof window.WPBruiserClient==='undefined')?wpbrLoader():window.WPBruiserClient.requestTokens();}},false);})();
+</script><script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/mpp-frontend.js" id="mpp_gutenberg_tabs-js"></script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/jquery.easypiechart.min.js" id="jquery-penci-piechart-js"></script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/review.js" id="jquery-penci-review-js"></script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/play.js" id="penci-play-js-js"></script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/penci-lazy.js" id="pc-lazy-js"></script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/libs-script.min.js" id="penci-libs-js-js"></script>
+<script type="text/javascript" id="main-scripts-js-extra">
+/* <![CDATA[ */
+var ajax_var_more = {"url":"https:\/\/singleboardbytes.com\/wp-admin\/admin-ajax.php","nonce":"f41d0666d7","errorPass":"<p class=\"message message-error\">Password does not match the confirm password<\/p>","login":"Email Address","password":"Password","headerstyle":"default"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/main.js" id="main-scripts-js"></script>
+<script type="text/javascript" id="penci_ajax_like_post-js-extra">
+/* <![CDATA[ */
+var ajax_var = {"url":"https:\/\/singleboardbytes.com\/wp-admin\/admin-ajax.php","nonce":"f41d0666d7","errorPass":"<p class=\"message message-error\">Password does not match the confirm password<\/p>","login":"Email Address","password":"Password","headerstyle":"default"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/post-like.js" id="penci_ajax_like_post-js"></script>
+<script type="text/javascript" id="penci_ajax_more_posts-js-extra">
+/* <![CDATA[ */
+var penci_ajax_more_posts = {"nonce":"5ecb16dc80"};
+var ajax_var_more = {"url":"https:\/\/singleboardbytes.com\/wp-admin\/admin-ajax.php","nonce":"f41d0666d7","errorPass":"<p class=\"message message-error\">Password does not match the confirm password<\/p>","login":"Email Address","password":"Password","headerstyle":"default"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/more-post.js" id="penci_ajax_more_posts-js"></script>
+<script type="text/javascript" id="penci_ajax_archive_more_scroll-js-extra">
+/* <![CDATA[ */
+var pcajaxamore_scroll = {"nonce":"41e3fba453"};
+var SOLEDADLOCALIZE = {"url":"https:\/\/singleboardbytes.com\/wp-admin\/admin-ajax.php","nonce":"f41d0666d7","errorPass":"<p class=\"message message-error\">Password does not match the confirm password<\/p>","login":"Email Address","password":"Password","headerstyle":"default"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/archive-more-post.js" id="penci_ajax_archive_more_scroll-js"></script>
+<script type="text/javascript" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/comment-reply.min.js" id="comment-reply-js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./How to install OpenCV on Raspberry Pi 4 _ Single Board Bytes_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146783938-5');
+</script>
+
+<script type="text/javascript" id="soledad-pagespeed-header" data-cfasync="false">!function(n,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(n="undefined"!=typeof globalThis?globalThis:n||self).LazyLoad=t()}(this,(function(){"use strict";function n(){return n=Object.assign||function(n){for(var t=1;t<arguments.length;t++){var e=arguments[t];for(var i in e)Object.prototype.hasOwnProperty.call(e,i)&&(n[i]=e[i])}return n},n.apply(this,arguments)}var t="undefined"!=typeof window,e=t&&!("onscroll"in window)||"undefined"!=typeof navigator&&/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent),i=t&&"IntersectionObserver"in window,o=t&&"classList"in document.createElement("p"),a=t&&window.devicePixelRatio>1,r={elements_selector:".lazy",container:e||t?document:null,threshold:300,thresholds:null,data_src:"src",data_srcset:"srcset",data_sizes:"sizes",data_bg:"bg",data_bg_hidpi:"bg-hidpi",data_bg_multi:"bg-multi",data_bg_multi_hidpi:"bg-multi-hidpi",data_poster:"poster",class_applied:"applied",class_loading:"loading",class_loaded:"loaded",class_error:"error",class_entered:"entered",class_exited:"exited",unobserve_completed:!0,unobserve_entered:!1,cancel_on_exit:!0,callback_enter:null,callback_exit:null,callback_applied:null,callback_loading:null,callback_loaded:null,callback_error:null,callback_finish:null,callback_cancel:null,use_native:!1},c=function(t){return n({},r,t)},u=function(n,t){var e,i="LazyLoad::Initialized",o=new n(t);try{e=new CustomEvent(i,{detail:{instance:o}})}catch(n){(e=document.createEvent("CustomEvent")).initCustomEvent(i,!1,!1,{instance:o})}window.dispatchEvent(e)},l="src",s="srcset",f="sizes",d="poster",_="llOriginalAttrs",g="loading",v="loaded",b="applied",p="error",h="native",m="data-",E="ll-status",I=function(n,t){return n.getAttribute(m+t)},y=function(n){return I(n,E)},A=function(n,t){return function(n,t,e){var i="data-ll-status";null!==e?n.setAttribute(i,e):n.removeAttribute(i)}(n,0,t)},k=function(n){return A(n,null)},L=function(n){return null===y(n)},w=function(n){return y(n)===h},x=[g,v,b,p],O=function(n,t,e,i){n&&(void 0===i?void 0===e?n(t):n(t,e):n(t,e,i))},N=function(n,t){o?n.classList.add(t):n.className+=(n.className?" ":"")+t},C=function(n,t){o?n.classList.remove(t):n.className=n.className.replace(new RegExp("(^|\\s+)"+t+"(\\s+|$)")," ").replace(/^\s+/,"").replace(/\s+$/,"")},M=function(n){return n.llTempImage},z=function(n,t){if(t){var e=t._observer;e&&e.unobserve(n)}},R=function(n,t){n&&(n.loadingCount+=t)},T=function(n,t){n&&(n.toLoadCount=t)},G=function(n){for(var t,e=[],i=0;t=n.children[i];i+=1)"SOURCE"===t.tagName&&e.push(t);return e},D=function(n,t){var e=n.parentNode;e&&"PICTURE"===e.tagName&&G(e).forEach(t)},V=function(n,t){G(n).forEach(t)},F=[l],j=[l,d],P=[l,s,f],S=function(n){return!!n[_]},U=function(n){return n[_]},$=function(n){return delete n[_]},q=function(n,t){if(!S(n)){var e={};t.forEach((function(t){e[t]=n.getAttribute(t)})),n[_]=e}},H=function(n,t){if(S(n)){var e=U(n);t.forEach((function(t){!function(n,t,e){e?n.setAttribute(t,e):n.removeAttribute(t)}(n,t,e[t])}))}},B=function(n,t,e){N(n,t.class_loading),A(n,g),e&&(R(e,1),O(t.callback_loading,n,e))},J=function(n,t,e){e&&n.setAttribute(t,e)},K=function(n,t){J(n,f,I(n,t.data_sizes)),J(n,s,I(n,t.data_srcset)),J(n,l,I(n,t.data_src))},Q={IMG:function(n,t){D(n,(function(n){q(n,P),K(n,t)})),q(n,P),K(n,t)},IFRAME:function(n,t){q(n,F),J(n,l,I(n,t.data_src))},VIDEO:function(n,t){V(n,(function(n){q(n,F),J(n,l,I(n,t.data_src))})),q(n,j),J(n,d,I(n,t.data_poster)),J(n,l,I(n,t.data_src)),n.load()}},W=["IMG","IFRAME","VIDEO"],X=function(n,t){!t||function(n){return n.loadingCount>0}(t)||function(n){return n.toLoadCount>0}(t)||O(n.callback_finish,t)},Y=function(n,t,e){n.addEventListener(t,e),n.llEvLisnrs[t]=e},Z=function(n,t,e){n.removeEventListener(t,e)},nn=function(n){return!!n.llEvLisnrs},tn=function(n){if(nn(n)){var t=n.llEvLisnrs;for(var e in t){var i=t[e];Z(n,e,i)}delete n.llEvLisnrs}},en=function(n,t,e){!function(n){delete n.llTempImage}(n),R(e,-1),function(n){n&&(n.toLoadCount-=1)}(e),C(n,t.class_loading),t.unobserve_completed&&z(n,e)},on=function(n,t,e){var i=M(n)||n;nn(i)||function(n,t,e){nn(n)||(n.llEvLisnrs={});var i="VIDEO"===n.tagName?"loadeddata":"load";Y(n,i,t),Y(n,"error",e)}(i,(function(o){!function(n,t,e,i){var o=w(t);en(t,e,i),N(t,e.class_loaded),A(t,v),O(e.callback_loaded,t,i),o||X(e,i)}(0,n,t,e),tn(i)}),(function(o){!function(n,t,e,i){var o=w(t);en(t,e,i),N(t,e.class_error),A(t,p),O(e.callback_error,t,i),o||X(e,i)}(0,n,t,e),tn(i)}))},an=function(n,t,e){!function(n){n.llTempImage=document.createElement("IMG")}(n),on(n,t,e),function(n){S(n)||(n[_]={backgroundImage:n.style.backgroundImage})}(n),function(n,t,e){var i=I(n,t.data_bg),o=I(n,t.data_bg_hidpi),r=a&&o?o:i;r&&(n.style.backgroundImage='url("'.concat(r,'")'),M(n).setAttribute(l,r),B(n,t,e))}(n,t,e),function(n,t,e){var i=I(n,t.data_bg_multi),o=I(n,t.data_bg_multi_hidpi),r=a&&o?o:i;r&&(n.style.backgroundImage=r,function(n,t,e){N(n,t.class_applied),A(n,b),e&&(t.unobserve_completed&&z(n,t),O(t.callback_applied,n,e))}(n,t,e))}(n,t,e)},rn=function(n,t,e){!function(n){return W.indexOf(n.tagName)>-1}(n)?an(n,t,e):function(n,t,e){on(n,t,e),function(n,t,e){var i=Q[n.tagName];i&&(i(n,t),B(n,t,e))}(n,t,e)}(n,t,e)},cn=function(n){n.removeAttribute(l),n.removeAttribute(s),n.removeAttribute(f)},un=function(n){D(n,(function(n){H(n,P)})),H(n,P)},ln={IMG:un,IFRAME:function(n){H(n,F)},VIDEO:function(n){V(n,(function(n){H(n,F)})),H(n,j),n.load()}},sn=function(n,t){(function(n){var t=ln[n.tagName];t?t(n):function(n){if(S(n)){var t=U(n);n.style.backgroundImage=t.backgroundImage}}(n)})(n),function(n,t){L(n)||w(n)||(C(n,t.class_entered),C(n,t.class_exited),C(n,t.class_applied),C(n,t.class_loading),C(n,t.class_loaded),C(n,t.class_error))}(n,t),k(n),$(n)},fn=["IMG","IFRAME","VIDEO"],dn=function(n){return n.use_native&&"loading"in HTMLImageElement.prototype},_n=function(n,t,e){n.forEach((function(n){return function(n){return n.isIntersecting||n.intersectionRatio>0}(n)?function(n,t,e,i){var o=function(n){return x.indexOf(y(n))>=0}(n);A(n,"entered"),N(n,e.class_entered),C(n,e.class_exited),function(n,t,e){t.unobserve_entered&&z(n,e)}(n,e,i),O(e.callback_enter,n,t,i),o||rn(n,e,i)}(n.target,n,t,e):function(n,t,e,i){L(n)||(N(n,e.class_exited),function(n,t,e,i){e.cancel_on_exit&&function(n){return y(n)===g}(n)&&"IMG"===n.tagName&&(tn(n),function(n){D(n,(function(n){cn(n)})),cn(n)}(n),un(n),C(n,e.class_loading),R(i,-1),k(n),O(e.callback_cancel,n,t,i))}(n,t,e,i),O(e.callback_exit,n,t,i))}(n.target,n,t,e)}))},gn=function(n){return Array.prototype.slice.call(n)},vn=function(n){return n.container.querySelectorAll(n.elements_selector)},bn=function(n){return function(n){return y(n)===p}(n)},pn=function(n,t){return function(n){return gn(n).filter(L)}(n||vn(t))},hn=function(n,e){var o=c(n);this._settings=o,this.loadingCount=0,function(n,t){i&&!dn(n)&&(t._observer=new IntersectionObserver((function(e){_n(e,n,t)}),function(n){return{root:n.container===document?null:n.container,rootMargin:n.thresholds||n.threshold+"px"}}(n)))}(o,this),function(n,e){t&&window.addEventListener("online",(function(){!function(n,t){var e;(e=vn(n),gn(e).filter(bn)).forEach((function(t){C(t,n.class_error),k(t)})),t.update()}(n,e)}))}(o,this),this.update(e)};return hn.prototype={update:function(n){var t,o,a=this._settings,r=pn(n,a);T(this,r.length),!e&&i?dn(a)?function(n,t,e){n.forEach((function(n){-1!==fn.indexOf(n.tagName)&&function(n,t,e){n.setAttribute("loading","lazy"),on(n,t,e),function(n,t){var e=Q[n.tagName];e&&e(n,t)}(n,t),A(n,h)}(n,t,e)})),T(e,0)}(r,a,this):(o=r,function(n){n.disconnect()}(t=this._observer),function(n,t){t.forEach((function(t){n.observe(t)}))}(t,o)):this.loadAll(r)},destroy:function(){this._observer&&this._observer.disconnect(),vn(this._settings).forEach((function(n){$(n)})),delete this._observer,delete this._settings,delete this.loadingCount,delete this.toLoadCount},loadAll:function(n){var t=this,e=this._settings;pn(n,e).forEach((function(n){z(n,t),rn(n,e,t)}))},restoreAll:function(){var n=this._settings;vn(n).forEach((function(t){sn(t,n)}))}},hn.load=function(n,t){var e=c(t);rn(n,e)},hn.resetStatus=function(n){k(n)},t&&function(n,t){if(t)if(t.length)for(var e,i=0;e=t[i];i+=1)u(n,e);else u(n,t)}(hn,window.lazyLoadOptions),hn}));
+
+(function () {
+
+    var PenciLazy = new LazyLoad({
+        elements_selector: '.penci-lazy',
+        data_bg: 'bgset',
+        class_loading: 'lazyloading',
+        class_entered: 'lazyloaded',
+        class_loaded: 'pcloaded',
+        unobserve_entered: true
+    });
+
+    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    var observer = new MutationObserver(function(mutations, observer) {
+        PenciLazy.update();
+    });
+
+    observer.observe(document, {
+        subtree: true,
+        attributes: true
+    });
+})();
+</script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
